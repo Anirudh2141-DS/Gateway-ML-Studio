@@ -1,0 +1,11 @@
+{
+  "ts": 1762120345,
+  "ok": false,
+  "tenant": "default",
+  "reasons": [
+    "default: p95 1620.0 > 1500.0",
+    "default: err 1.0 > 0.03",
+    "default: fast burn 20.0 > 1.0",
+    "default: slow burn 20.0 > 1.0"
+  ]
+}

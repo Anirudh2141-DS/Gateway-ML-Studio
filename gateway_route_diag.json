@@ -1,0 +1,8 @@
+{
+  "ts": 1762114677,
+  "strategies": {},
+  "fanout_errors": {
+    "rerank": 1.0,
+    "concurrency": 12.0
+  }
+}

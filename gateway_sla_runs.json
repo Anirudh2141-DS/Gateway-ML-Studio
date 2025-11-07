@@ -1,0 +1,43 @@
+{
+  "data": [
+    {
+      "ts": 1761843687,
+      "global": {
+        "n": 8,
+        "p95_ms": 19.724130630493164,
+        "avg_ms": 9.793370962142944
+      },
+      "per_ns": {
+        "default": {
+          "n": 4,
+          "p95_ms": 8.023262023925781,
+          "avg_ms": 6.2416791915893555
+        },
+        "tenant-acme": {
+          "n": 4,
+          "p95_ms": 19.724130630493164,
+          "avg_ms": 13.345062732696533
+        }
+      },
+      "per_query": {
+        "smoke test": {
+          "n": 4,
+          "p95_ms": 16.94345474243164,
+          "avg_ms": 11.172711849212646
+        },
+        "explain dense retriever vs bm25 for RAG": {
+          "n": 4,
+          "p95_ms": 13.57412338256836,
+          "avg_ms": 8.414030075073242
+        }
+      },
+      "threshold": 1800.0
+    }
+  ],
+  "_meta": {
+    "schema_version": "1.1.0",
+    "wrapped": true,
+    "written_at": 1762114717,
+    "source": "notebook/gateway"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "ts": 1762114702,
+  "schema": "tenants/1",
+  "tenants": {
+    "default": {
+      "chaos": {
+        "disable_ce": false,
+        "force_bm25": false,
+        "verifier_v2": false
+      },
+      "rl_weights": {
+        "factual": 1.0,
+        "sql": 1.0
+      },
+      "ratelimits": {
+        "qps": 20,
+        "burst": 40
+      }
+    },
+    "tenant-acme": {
+      "chaos": {
+        "disable_ce": true,
+        "force_bm25": false
+      },
+      "rl_weights": {
+        "factual": 0.7,
+        "sql": 1.2
+      },
+      "ratelimits": {
+        "qps": 20,
+        "burst": 40
+      }
+    },
+    "tenant-beta": {
+      "chaos": {
+        "disable_ce": false,
+        "force_bm25": true
+      },
+      "rl_weights": {
+        "factual": 1.0,
+        "sql": 1.0
+      },
+      "ratelimits": {
+        "qps": 20,
+        "burst": 40
+      }
+    }
+  },
+  "_meta": {
+    "source": "notebook/gateway",
+    "schema_version": "1.1.0",
+    "written_at": 1762114717
+  },
+  "ops_profile": "daily"
+}

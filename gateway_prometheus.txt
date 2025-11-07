@@ -1,0 +1,14 @@
+# scraped_at 1762118834
+gateway_info{host="LAPTOP-GV10237H"} 1
+gateway_slo_p95_ms{tenant="default"} 3.7
+gateway_slo_error_rate{tenant="default"} 1.0
+gateway_slo_p95_ms{tenant="tenant-acme"} 5.0
+gateway_slo_error_rate{tenant="tenant-acme"} 1.0
+gateway_slo_p95_ms{tenant="tenant-beta"} 4.8
+gateway_slo_error_rate{tenant="tenant-beta"} 1.0
+gateway_burn_rate{window="fast"} 20.0
+gateway_burn_rate{window="slow"} 20.0
+gateway_promotion_gate_ok  0
+gateway_frozen  0
+gateway_dlq_size_bytes  0
+gateway_notify_log_size_bytes  0

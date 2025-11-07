@@ -1,0 +1,31 @@
+{
+  "ts": 1762114719,
+  "method": "dry-run",
+  "endpoint": null,
+  "files": [
+    {
+      "file": "\\tmp\\art\\gateway_config.json",
+      "exists": true,
+      "size": 4959,
+      "status": "dry-run"
+    },
+    {
+      "file": "\\tmp\\art\\gateway_full_bundle.tar.gz",
+      "exists": true,
+      "size": 9476,
+      "status": "dry-run"
+    },
+    {
+      "file": "\\tmp\\art\\gateway_control.json",
+      "exists": true,
+      "size": 1056,
+      "status": "dry-run"
+    },
+    {
+      "file": "\\tmp\\art\\gateway_schema_report.json",
+      "exists": false,
+      "size": 0,
+      "status": "missing"
+    }
+  ]
+}

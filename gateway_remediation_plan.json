@@ -1,0 +1,61 @@
+{
+  "ts": 1762119321,
+  "summary": "2. Promotion gate FAILED \u2192 check gateway_promotion_gate.json for reasons.",
+  "steps": [
+    "2. Promotion gate FAILED \u2192 check gateway_promotion_gate.json for reasons.",
+    "3. Anomalies detected \u2192 check burn / p95 and re-run gw_cli9('retention')."
+  ],
+  "gate": {
+    "ts": 1762118093,
+    "ok": false,
+    "reasons": [
+      "error_rate 1.0 > 0.03",
+      "fast burn 20.0 > 1.0",
+      "slow burn 20.0 > 1.0"
+    ],
+    "slo_ns": {
+      "tenant": "default",
+      "target_p95_ms": 1800.0,
+      "actual_p95_ms": 3.7,
+      "target_error_rate": 0.05,
+      "actual_error_rate": 1.0,
+      "total_probes": 2,
+      "breach_p95": false,
+      "breach_error": true
+    },
+    "burn": {
+      "ts": 1762114750,
+      "schema": "1.1.0",
+      "error_budget": 0.05,
+      "fast": {
+        "window_s": 300,
+        "errors": 6,
+        "total": 6,
+        "burn_rate": 20.0
+      },
+      "slow": {
+        "window_s": 1800,
+        "errors": 6,
+        "total": 6,
+        "burn_rate": 20.0
+      }
+    }
+  },
+  "anomalies": {
+    "ts": 1762119321,
+    "fast": 20.0,
+    "slow": 20.0,
+    "fast_mean": 20.0,
+    "fast_std": 0.0,
+    "slow_mean": 20.0,
+    "slow_std": 0.0,
+    "fast_z": 0.0,
+    "slow_z": 0.0,
+    "anomalies": [
+      "fast burn > 1.0 (20.0)",
+      "slow burn > 1.0 (20.0)"
+    ],
+    "ok": false
+  },
+  "frozen": {}
+}

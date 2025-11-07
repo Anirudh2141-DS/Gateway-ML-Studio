@@ -1,0 +1,21 @@
+{
+  "ts": 1762114762,
+  "schema": "1.2.0",
+  "quotas": {
+    "default": {
+      "qps": 20,
+      "burst": 40,
+      "updated_at": 1762114762
+    },
+    "tenant-acme": {
+      "qps": 20,
+      "burst": 40,
+      "updated_at": 1762114762
+    },
+    "tenant-beta": {
+      "qps": 20,
+      "burst": 40,
+      "updated_at": 1762114762
+    }
+  }
+}

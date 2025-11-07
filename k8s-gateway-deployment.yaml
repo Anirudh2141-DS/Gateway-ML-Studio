@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rag-gateway
+  labels:
+    app: rag-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rag-gateway
+  template:
+    metadata:
+      labels:
+        app: rag-gateway
+    spec:
+      containers:
+        - name: gateway
+          image: your-registry/rag-gateway:latest
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: RAG_BASE
+              value: "http://mock-rag.default.svc.cluster.local:9909"
+            - name: GATEWAY_PORT
+              value: "9910"
+          ports:
+            - containerPort: 9910
+          readinessProbe:
+            httpGet:
+              path: /up
+              port: 9910
+            initialDelaySeconds: 3
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /up
+              port: 9910
+            initialDelaySeconds: 10
+            periodSeconds: 10

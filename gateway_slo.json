@@ -1,0 +1,22 @@
+{
+  "ts": 1762114736,
+  "schema": "1.1.0",
+  "global": {
+    "p95_ms": 1800.0,
+    "error_rate": 0.05
+  },
+  "tenants": {
+    "default": {
+      "p95_ms": 1800.0,
+      "error_rate": 0.05
+    },
+    "tenant-acme": {
+      "p95_ms": 1200.0,
+      "error_rate": 0.03
+    },
+    "tenant-beta": {
+      "p95_ms": 1500.0,
+      "error_rate": 0.04
+    }
+  }
+}

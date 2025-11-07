@@ -1,0 +1,12 @@
+{
+  "replay": {
+    "replayed": 0,
+    "left": 0
+  },
+  "janitor": {
+    "ts": 1762114724,
+    "total_mb": 0.28,
+    "warn": false,
+    "removed": []
+  }
+}

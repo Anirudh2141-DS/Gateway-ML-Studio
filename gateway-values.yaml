@@ -1,0 +1,19 @@
+image:
+  repository: your-registry/rag-gateway:latest
+  tag: latest
+
+service:
+  port: 9910
+
+env:
+  RAG_BASE: "http://127.0.0.1:9909"
+  GATEWAY_PORT: "9910"
+  GATEWAY_ADMIN_TOKEN: "changeme"
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 256Mi

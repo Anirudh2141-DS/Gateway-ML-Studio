@@ -1,0 +1,27 @@
+groups:
+  - name: rag-gateway
+    rules:
+      - alert: GatewayLatencyHighP95
+        expr: histogram_quantile(0.95, sum(rate(gateway_answer_latency_ms_bucket[5m])) by (le)) > 1.8
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Gateway p95 is high"
+          description: "Gateway p95 latency > 1.8s for 2m"
+      - alert: GatewayDenseErrors
+        expr: sum(rate(gateway_fanout_errors_total{{step="dense"}}[5m])) > 0
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Gateway dense fanout errors"
+          description: "dense retriever is erroring — consider force_bm25"
+      - alert: GatewayNoStrategyMix
+        expr: sum(rate(gateway_strategy_selected_total[5m])) == 0
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Gateway not selecting strategies"
+          description: "RAG strategy mix is 0 — gateway might be stuck or misconfigured"

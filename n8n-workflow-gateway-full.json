@@ -1,0 +1,214 @@
+{
+  "name": "Gateway Full Orchestration (cron \u2192 SLO \u2192 gate \u2192 promote/freeze \u2192 retention \u2192 notify)",
+  "nodes": [
+    {
+      "id": "1",
+      "name": "Cron 5m",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 2,
+      "position": [
+        240,
+        300
+      ],
+      "parameters": {
+        "rule": {
+          "interval": 5
+        }
+      }
+    },
+    {
+      "id": "2",
+      "name": "Pull Events",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        480,
+        140
+      ],
+      "parameters": {
+        "url": "http://127.0.0.1:9930/outbox/pull",
+        "method": "GET",
+        "jsonParameters": true
+      }
+    },
+    {
+      "id": "3",
+      "name": "Check Promotion Gate",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        480,
+        300
+      ],
+      "parameters": {
+        "url": "http://127.0.0.1:9929/promote/check",
+        "method": "POST",
+        "jsonParameters": true
+      }
+    },
+    {
+      "id": "4",
+      "name": "IF Gate OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        720,
+        300
+      ],
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json[\"ok\"] }}",
+              "value2": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "5",
+      "name": "Promote (Notebook)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        960,
+        180
+      ],
+      "parameters": {
+        "url": "http://127.0.0.1:9930/promote/run",
+        "method": "POST",
+        "jsonParameters": true,
+        "options": {},
+        "bodyParametersJson": "{\"reason\": \"n8n-auto\"}"
+      }
+    },
+    {
+      "id": "6",
+      "name": "Freeze (bad SLO)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        960,
+        420
+      ],
+      "parameters": {
+        "url": "http://127.0.0.1:9929/freeze",
+        "method": "POST",
+        "jsonParameters": true,
+        "bodyParametersJson": "{\"reason\": \"n8n-slo-breach\", \"ttl_s\": 1800}"
+      }
+    },
+    {
+      "id": "7",
+      "name": "Retention Sweep",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1200,
+        420
+      ],
+      "parameters": {
+        "url": "http://127.0.0.1:9929/retention",
+        "method": "POST",
+        "jsonParameters": true
+      }
+    },
+    {
+      "id": "8",
+      "name": "Push OTEL (optional)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1200,
+        180
+      ],
+      "parameters": {
+        "url": "http://127.0.0.1:9930/otel/push",
+        "method": "POST",
+        "jsonParameters": true,
+        "bodyParametersJson": "{}"
+      }
+    },
+    {
+      "id": "9",
+      "name": "Heartbeat (get last promotion)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1440,
+        300
+      ],
+      "parameters": {
+        "url": "http://127.0.0.1:9930/promote/last",
+        "method": "GET",
+        "jsonParameters": true
+      }
+    }
+  ],
+  "connections": {
+    "Cron 5m": {
+      "main": [
+        [
+          {
+            "node": "Pull Events",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Check Promotion Gate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Promotion Gate": {
+      "main": [
+        [
+          {
+            "node": "IF Gate OK?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF Gate OK?": {
+      "main": [
+        [
+          {
+            "node": "Promote (Notebook)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Push OTEL (optional)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Heartbeat (get last promotion)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Freeze (bad SLO)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Retention Sweep",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "gw-full-1762121381"
+}

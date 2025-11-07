@@ -1,0 +1,24 @@
+{
+  "ts": 1762118834,
+  "host": "LAPTOP-GV10237H",
+  "tenants": [
+    {
+      "tenant": "default",
+      "p95_ms": 3.7,
+      "error_rate": 1.0,
+      "burn_fast": 20.0
+    },
+    {
+      "tenant": "tenant-acme",
+      "p95_ms": 5.0,
+      "error_rate": 1.0,
+      "burn_fast": 20.0
+    },
+    {
+      "tenant": "tenant-beta",
+      "p95_ms": 4.8,
+      "error_rate": 1.0,
+      "burn_fast": 20.0
+    }
+  ]
+}

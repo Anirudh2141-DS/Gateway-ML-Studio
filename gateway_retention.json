@@ -1,0 +1,10 @@
+{
+  "ts": 1762114702,
+  "schema": "retention/1",
+  "keep_days": 3,
+  "keep_min_files": 50,
+  "extra_globs": [
+    "gateway_prom_runs/metrics_*.txt",
+    "gateway_runs/gateway_smoke_*.json"
+  ]
+}

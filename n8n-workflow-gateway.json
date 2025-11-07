@@ -1,0 +1,133 @@
+{
+  "name": "Gateway SLO / Promotion Orchestration",
+  "nodes": [
+    {
+      "id": "1",
+      "name": "Cron 5m",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 2,
+      "position": [
+        240,
+        300
+      ],
+      "parameters": {
+        "rule": {
+          "interval": 5
+        }
+      }
+    },
+    {
+      "id": "2",
+      "name": "Check Promotion Gate",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        520,
+        300
+      ],
+      "parameters": {
+        "url": "http://127.0.0.1:9929/promote/check",
+        "method": "POST",
+        "jsonParameters": true
+      }
+    },
+    {
+      "id": "3",
+      "name": "IF Gate OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        780,
+        300
+      ],
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json[\"ok\"] }}",
+              "value2": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "4",
+      "name": "Promote (Notebook)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1040,
+        180
+      ],
+      "parameters": {
+        "url": "http://127.0.0.1:9929/promote/run",
+        "method": "POST",
+        "jsonParameters": true,
+        "options": {}
+      }
+    },
+    {
+      "id": "5",
+      "name": "Freeze (bad SLO)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1040,
+        420
+      ],
+      "parameters": {
+        "url": "http://127.0.0.1:9929/freeze",
+        "method": "POST",
+        "jsonParameters": true,
+        "options": {},
+        "bodyParametersJson": "{\"reason\": \"n8n-slo-breach\", \"ttl_s\": 1800}"
+      }
+    }
+  ],
+  "connections": {
+    "Cron 5m": {
+      "main": [
+        [
+          {
+            "node": "Check Promotion Gate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Promotion Gate": {
+      "main": [
+        [
+          {
+            "node": "IF Gate OK?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF Gate OK?": {
+      "main": [
+        [
+          {
+            "node": "Promote (Notebook)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Freeze (bad SLO)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "gw-1762118482"
+}

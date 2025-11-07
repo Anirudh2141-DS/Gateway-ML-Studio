@@ -1,0 +1,12 @@
+{
+  "ts": 1762114875,
+  "schema": "1.2.0",
+  "required": {
+    "p95_ms": 1500.0,
+    "error_rate": 0.03,
+    "burn_fast": 1.0,
+    "burn_slow": 1.0
+  },
+  "canary_rel_p95": 1.1,
+  "canary_rel_err": 1.25
+}

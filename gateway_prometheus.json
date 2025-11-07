@@ -1,0 +1,427 @@
+[
+  {
+    "name": "gateway_answer_latency_ms_bucket",
+    "labels": {
+      "le": "10.0"
+    },
+    "value": 12.0
+  },
+  {
+    "name": "gateway_answer_latency_ms_bucket",
+    "labels": {
+      "le": "20.0"
+    },
+    "value": 12.0
+  },
+  {
+    "name": "gateway_answer_latency_ms_bucket",
+    "labels": {
+      "le": "40.0"
+    },
+    "value": 12.0
+  },
+  {
+    "name": "gateway_answer_latency_ms_bucket",
+    "labels": {
+      "le": "80.0"
+    },
+    "value": 12.0
+  },
+  {
+    "name": "gateway_answer_latency_ms_bucket",
+    "labels": {
+      "le": "160.0"
+    },
+    "value": 13.0
+  },
+  {
+    "name": "gateway_answer_latency_ms_bucket",
+    "labels": {
+      "le": "320.0"
+    },
+    "value": 14.0
+  },
+  {
+    "name": "gateway_answer_latency_ms_bucket",
+    "labels": {
+      "le": "640.0"
+    },
+    "value": 14.0
+  },
+  {
+    "name": "gateway_answer_latency_ms_bucket",
+    "labels": {
+      "le": "1280.0"
+    },
+    "value": 14.0
+  },
+  {
+    "name": "gateway_answer_latency_ms_bucket",
+    "labels": {
+      "le": "2560.0"
+    },
+    "value": 14.0
+  },
+  {
+    "name": "gateway_answer_latency_ms_bucket",
+    "labels": {
+      "le": "+Inf"
+    },
+    "value": 14.0
+  },
+  {
+    "name": "gateway_answer_latency_ms_count",
+    "labels": {},
+    "value": 14.0
+  },
+  {
+    "name": "gateway_answer_latency_ms_sum",
+    "labels": {},
+    "value": 293.9013481140137
+  },
+  {
+    "name": "gateway_answer_latency_ms_created",
+    "labels": {},
+    "value": 1761840341.0705435
+  },
+  {
+    "name": "rag_bm25_ms_bucket",
+    "labels": {
+      "le": "10.0"
+    },
+    "value": 0.0
+  },
+  {
+    "name": "rag_bm25_ms_bucket",
+    "labels": {
+      "le": "20.0"
+    },
+    "value": 0.0
+  },
+  {
+    "name": "rag_bm25_ms_bucket",
+    "labels": {
+      "le": "40.0"
+    },
+    "value": 2.0
+  },
+  {
+    "name": "rag_bm25_ms_bucket",
+    "labels": {
+      "le": "80.0"
+    },
+    "value": 2.0
+  },
+  {
+    "name": "rag_bm25_ms_bucket",
+    "labels": {
+      "le": "160.0"
+    },
+    "value": 2.0
+  },
+  {
+    "name": "rag_bm25_ms_bucket",
+    "labels": {
+      "le": "320.0"
+    },
+    "value": 2.0
+  },
+  {
+    "name": "rag_bm25_ms_bucket",
+    "labels": {
+      "le": "640.0"
+    },
+    "value": 2.0
+  },
+  {
+    "name": "rag_bm25_ms_bucket",
+    "labels": {
+      "le": "1280.0"
+    },
+    "value": 2.0
+  },
+  {
+    "name": "rag_bm25_ms_bucket",
+    "labels": {
+      "le": "+Inf"
+    },
+    "value": 2.0
+  },
+  {
+    "name": "rag_bm25_ms_count",
+    "labels": {},
+    "value": 2.0
+  },
+  {
+    "name": "rag_bm25_ms_sum",
+    "labels": {},
+    "value": 62.0
+  },
+  {
+    "name": "rag_bm25_ms_created",
+    "labels": {},
+    "value": 1761840341.0705435
+  },
+  {
+    "name": "rag_dense_ms_bucket",
+    "labels": {
+      "le": "10.0"
+    },
+    "value": 0.0
+  },
+  {
+    "name": "rag_dense_ms_bucket",
+    "labels": {
+      "le": "20.0"
+    },
+    "value": 0.0
+  },
+  {
+    "name": "rag_dense_ms_bucket",
+    "labels": {
+      "le": "40.0"
+    },
+    "value": 0.0
+  },
+  {
+    "name": "rag_dense_ms_bucket",
+    "labels": {
+      "le": "80.0"
+    },
+    "value": 2.0
+  },
+  {
+    "name": "rag_dense_ms_bucket",
+    "labels": {
+      "le": "160.0"
+    },
+    "value": 2.0
+  },
+  {
+    "name": "rag_dense_ms_bucket",
+    "labels": {
+      "le": "320.0"
+    },
+    "value": 2.0
+  },
+  {
+    "name": "rag_dense_ms_bucket",
+    "labels": {
+      "le": "640.0"
+    },
+    "value": 2.0
+  },
+  {
+    "name": "rag_dense_ms_bucket",
+    "labels": {
+      "le": "1280.0"
+    },
+    "value": 2.0
+  },
+  {
+    "name": "rag_dense_ms_bucket",
+    "labels": {
+      "le": "+Inf"
+    },
+    "value": 2.0
+  },
+  {
+    "name": "rag_dense_ms_count",
+    "labels": {},
+    "value": 2.0
+  },
+  {
+    "name": "rag_dense_ms_sum",
+    "labels": {},
+    "value": 126.0
+  },
+  {
+    "name": "rag_dense_ms_created",
+    "labels": {},
+    "value": 1761840341.0705435
+  },
+  {
+    "name": "rag_rerank_ms_bucket",
+    "labels": {
+      "le": "10.0"
+    },
+    "value": 0.0
+  },
+  {
+    "name": "rag_rerank_ms_bucket",
+    "labels": {
+      "le": "20.0"
+    },
+    "value": 0.0
+  },
+  {
+    "name": "rag_rerank_ms_bucket",
+    "labels": {
+      "le": "40.0"
+    },
+    "value": 1.0
+  },
+  {
+    "name": "rag_rerank_ms_bucket",
+    "labels": {
+      "le": "80.0"
+    },
+    "value": 1.0
+  },
+  {
+    "name": "rag_rerank_ms_bucket",
+    "labels": {
+      "le": "160.0"
+    },
+    "value": 1.0
+  },
+  {
+    "name": "rag_rerank_ms_bucket",
+    "labels": {
+      "le": "320.0"
+    },
+    "value": 1.0
+  },
+  {
+    "name": "rag_rerank_ms_bucket",
+    "labels": {
+      "le": "640.0"
+    },
+    "value": 1.0
+  },
+  {
+    "name": "rag_rerank_ms_bucket",
+    "labels": {
+      "le": "1280.0"
+    },
+    "value": 1.0
+  },
+  {
+    "name": "rag_rerank_ms_bucket",
+    "labels": {
+      "le": "+Inf"
+    },
+    "value": 1.0
+  },
+  {
+    "name": "rag_rerank_ms_count",
+    "labels": {},
+    "value": 1.0
+  },
+  {
+    "name": "rag_rerank_ms_sum",
+    "labels": {},
+    "value": 37.0
+  },
+  {
+    "name": "rag_rerank_ms_created",
+    "labels": {},
+    "value": 1761840341.0705435
+  },
+  {
+    "name": "rag_complete_ms_bucket",
+    "labels": {
+      "le": "20.0"
+    },
+    "value": 1.0
+  },
+  {
+    "name": "rag_complete_ms_bucket",
+    "labels": {
+      "le": "40.0"
+    },
+    "value": 1.0
+  },
+  {
+    "name": "rag_complete_ms_bucket",
+    "labels": {
+      "le": "80.0"
+    },
+    "value": 1.0
+  },
+  {
+    "name": "rag_complete_ms_bucket",
+    "labels": {
+      "le": "160.0"
+    },
+    "value": 2.0
+  },
+  {
+    "name": "rag_complete_ms_bucket",
+    "labels": {
+      "le": "320.0"
+    },
+    "value": 2.0
+  },
+  {
+    "name": "rag_complete_ms_bucket",
+    "labels": {
+      "le": "640.0"
+    },
+    "value": 2.0
+  },
+  {
+    "name": "rag_complete_ms_bucket",
+    "labels": {
+      "le": "1280.0"
+    },
+    "value": 2.0
+  },
+  {
+    "name": "rag_complete_ms_bucket",
+    "labels": {
+      "le": "2560.0"
+    },
+    "value": 2.0
+  },
+  {
+    "name": "rag_complete_ms_bucket",
+    "labels": {
+      "le": "+Inf"
+    },
+    "value": 2.0
+  },
+  {
+    "name": "rag_complete_ms_count",
+    "labels": {},
+    "value": 2.0
+  },
+  {
+    "name": "rag_complete_ms_sum",
+    "labels": {},
+    "value": 85.0
+  },
+  {
+    "name": "rag_complete_ms_created",
+    "labels": {},
+    "value": 1761840341.0705435
+  },
+  {
+    "name": "gateway_fanout_errors_total",
+    "labels": {
+      "step": "rerank"
+    },
+    "value": 1.0
+  },
+  {
+    "name": "gateway_fanout_errors_total",
+    "labels": {
+      "step": "concurrency"
+    },
+    "value": 12.0
+  },
+  {
+    "name": "gateway_fanout_errors_created",
+    "labels": {
+      "step": "rerank"
+    },
+    "value": 1761840348.3220744
+  },
+  {
+    "name": "gateway_fanout_errors_created",
+    "labels": {
+      "step": "concurrency"
+    },
+    "value": 1761840359.639065
+  }
+]

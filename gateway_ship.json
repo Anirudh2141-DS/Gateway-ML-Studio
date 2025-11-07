@@ -1,0 +1,67 @@
+{
+  "ts": 1762114717,
+  "schema": "1.1.0",
+  "files": [
+    {
+      "name": "config",
+      "path": "\\tmp\\art\\gateway_config.json",
+      "exists": true,
+      "size": 4959
+    },
+    {
+      "name": "desired",
+      "path": "\\tmp\\art\\gateway_desired_state.json",
+      "exists": true,
+      "size": 388
+    },
+    {
+      "name": "rbac",
+      "path": "\\tmp\\art\\gateway_rbac.json",
+      "exists": true,
+      "size": 1294
+    },
+    {
+      "name": "tenants",
+      "path": "\\tmp\\art\\gateway_tenants.json",
+      "exists": true,
+      "size": 1044
+    },
+    {
+      "name": "schema_report",
+      "path": "\\tmp\\art\\gateway_schema_report.json",
+      "exists": false,
+      "size": 0
+    },
+    {
+      "name": "multi_drift",
+      "path": "\\tmp\\art\\gateway_multi_drift.json",
+      "exists": true,
+      "size": 3645
+    },
+    {
+      "name": "sla",
+      "path": "\\tmp\\art\\gateway_sla_runs.json",
+      "exists": true,
+      "size": 979
+    },
+    {
+      "name": "agg",
+      "path": "\\tmp\\art\\gateway_runs_agg.json",
+      "exists": true,
+      "size": 1477
+    },
+    {
+      "name": "prom_ts",
+      "path": "\\tmp\\art\\gateway_prom_timeseries.json",
+      "exists": true,
+      "size": 19753
+    },
+    {
+      "name": "full_bundle",
+      "path": "\\tmp\\art\\gateway_full_bundle.tar.gz",
+      "exists": true,
+      "size": 9476
+    }
+  ],
+  "note": "CI: upload these somewhere (S3/GCS/artifacts)"
+}

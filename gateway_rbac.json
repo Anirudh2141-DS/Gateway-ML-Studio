@@ -1,0 +1,53 @@
+{
+  "ts": 1762114702,
+  "schema": "rbac/1",
+  "roles": {
+    "admin": [
+      "chaos.set",
+      "chaos.ns.set",
+      "rl.update",
+      "rl.promote",
+      "rl.rollback",
+      "drift.remediate",
+      "ops.write"
+    ],
+    "ml": [
+      "rl.update",
+      "rl.promote",
+      "rl.rollback"
+    ],
+    "sre": [
+      "chaos.set",
+      "chaos.ns.set",
+      "drift.remediate",
+      "ops.write"
+    ],
+    "read-only": [
+      "metrics.read",
+      "runs.read",
+      "ns.smoke"
+    ]
+  },
+  "tokens": {
+    "real-prod-token-123": "admin",
+    "ml-team-token-456": "ml"
+  },
+  "actions": {
+    "chaos.set": "Set global chaos flags",
+    "chaos.ns.set": "Set per-namespace chaos flags",
+    "rl.update": "Update router/RL weights",
+    "rl.promote": "Promote RL weights live",
+    "rl.rollback": "Rollback RL weights",
+    "drift.remediate": "Apply desired state to live gateway",
+    "ops.write": "Regenerate ops / oncall docs",
+    "metrics.read": "Read /metrics, prom, telemetry",
+    "runs.read": "Read gateway_runs_agg + smoke",
+    "ns.smoke": "Hit /answer with x-namespace for smoke tests"
+  },
+  "_meta": {
+    "source": "notebook/gateway",
+    "schema_version": "1.1.0",
+    "written_at": 1762114717
+  },
+  "ops_profile": "daily"
+}

@@ -1,0 +1,24 @@
+{
+  "ts": 1762114755,
+  "host": "LAPTOP-GV10237H",
+  "disk_mb": 0.35,
+  "lint_ok": true,
+  "lint_problems": [],
+  "burn": {
+    "ts": 1762114750,
+    "schema": "1.1.0",
+    "error_budget": 0.05,
+    "fast": {
+      "window_s": 300,
+      "errors": 6,
+      "total": 6,
+      "burn_rate": 20.0
+    },
+    "slow": {
+      "window_s": 1800,
+      "errors": 6,
+      "total": 6,
+      "burn_rate": 20.0
+    }
+  }
+}

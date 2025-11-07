@@ -1,0 +1,41 @@
+name: gateway-ci
+on:
+  push:
+    paths:
+      - "gateway/**"
+      - ".github/workflows/gateway-ci.yml"
+  pull_request:
+    paths:
+      - "gateway/**"
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build gateway
+        run: |
+          cd gateway
+          cargo build --release
+
+      - name: Run smoke notebook step (headless)
+        run: |
+          python - << 'PY'
+from pathlib import Path
+import json, os, sys
+ART_DIR = Path("/tmp/art")
+agg = ART_DIR / "gateway_runs_agg.json"
+if agg.exists():
+    js = json.loads(agg.read_text())
+    runs = js.get("runs", [])
+    if runs:
+        latest = runs[0]
+        p95 = latest.get("p95_ms")
+        if p95 is not None and p95 > 1800.0:
+            print(f"p95 too high: {p95} ms")
+            sys.exit(1)
+print("ci-smoke ok")
+PY

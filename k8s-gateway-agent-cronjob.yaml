@@ -1,0 +1,52 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rag-gateway-agent
+spec:
+  schedule: "*/5 * * * *"  # every 5 minutes
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: gateway-agent
+              image: python:3.11-slim
+              env:
+                - name: ART_DIR
+                  value: "/tmp/art"
+                - name: GATEWAY_BASE
+                  value: "http://127.0.0.1:9910"
+                - name: GATEWAY_ADMIN_TOKEN
+                  valueFrom:
+                    secretKeyRef:
+                      name: rag-gateway-secrets
+                      key: GATEWAY_ADMIN_TOKEN
+              volumeMounts:
+                - name: artdir
+                  mountPath: /tmp/art
+              command: ["python", "-c"]
+              args:
+                - |
+                  import json, time, os, requests
+                  from pathlib import Path
+                  ART_DIR = Path(os.getenv("ART_DIR", "/tmp/art"))
+                  ctrl = ART_DIR / "gateway_control.json"
+                  base = os.getenv("GATEWAY_BASE", "http://127.0.0.1:9910")
+                  tok = os.getenv("GATEWAY_ADMIN_TOKEN", "")
+                  h = {"content-type": "application/json"}
+                  if tok:
+                      h["x-admin-token"] = tok
+                  if ctrl.exists():
+                      doc = json.loads(ctrl.read_text())
+                      chaos = doc.get("chaos") or {}
+                      rl = doc.get("rl_weights") or {}
+                      requests.post(f"{base}/admin/chaos/set", headers=h, json=chaos, timeout=3)
+                      requests.post(f"{base}/rl/update", headers=h, json={"weights": rl}, timeout=3)
+                      print("pushed control → gateway")
+                  else:
+                      print("no control file, skipping")
+          volumes:
+            - name: artdir
+              persistentVolumeClaim:
+                claimName: rag-gateway-art

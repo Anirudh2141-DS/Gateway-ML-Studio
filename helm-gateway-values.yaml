@@ -1,0 +1,17 @@
+# auto-generated from notebook
+fullnameOverride: rag-gateway
+image:
+  repository: python:3.11-slim
+  tag: latest
+  pullPolicy: IfNotPresent
+gateway:
+  baseUrl: "http://127.0.0.1:9910"
+  adminToken: ""
+sidecar:
+  enabled: true
+  image: python:3.11-slim
+  artDir: /tmp/art
+  pollIntervalSeconds: 5
+persistence:
+  enabled: true
+  existingClaim: rag-gateway-art

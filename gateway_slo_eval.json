@@ -1,0 +1,27 @@
+{
+  "ts": 1762120345,
+  "schema": "1.0.0",
+  "tenants": {
+    "default": {
+      "target_p95_ms": 1800.0,
+      "actual_p95_ms": 1620.0,
+      "target_error_rate": 0.05,
+      "actual_error_rate": 0.0,
+      "ok": true
+    },
+    "tenant-acme": {
+      "target_p95_ms": 1200.0,
+      "actual_p95_ms": 1080.0,
+      "target_error_rate": 0.03,
+      "actual_error_rate": 0.0,
+      "ok": true
+    },
+    "tenant-beta": {
+      "target_p95_ms": 1500.0,
+      "actual_p95_ms": 1350.0,
+      "target_error_rate": 0.04,
+      "actual_error_rate": 0.0,
+      "ok": true
+    }
+  }
+}

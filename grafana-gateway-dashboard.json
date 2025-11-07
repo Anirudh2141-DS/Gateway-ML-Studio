@@ -1,0 +1,52 @@
+{
+  "title": "Gateway Control / SLO / Controller",
+  "uid": "gateway-auto",
+  "schemaVersion": 37,
+  "version": 1,
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "Controller Disk MB",
+      "targets": [
+        {
+          "expr": "gateway_controller_disk_mb"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "type": "timeseries",
+      "title": "SLO Breaches",
+      "targets": [
+        {
+          "expr": "gateway_controller_slo_breaches"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "type": "timeseries",
+      "title": "Tenant p95 (ms)",
+      "targets": [
+        {
+          "expr": "gateway_controller_tenant_p95_ms{tenant!=\"\"}"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "type": "timeseries",
+      "title": "Pending Ops File Size (MB)",
+      "targets": [
+        {
+          "expr": "gateway_pending_ops_size_mb"
+        }
+      ],
+      "id": 4
+    }
+  ],
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  }
+}

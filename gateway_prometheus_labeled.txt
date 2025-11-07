@@ -1,0 +1,14 @@
+# scraped_at 1762118834
+gateway_info{host="LAPTOP-GV10237H"} 1,env="dev",host="LAPTOP-GV10237H",control=""}
+gateway_slo_p95_ms{tenant="default"} 3.7,env="dev",host="LAPTOP-GV10237H",control=""}
+gateway_slo_error_rate{tenant="default"} 1.0,env="dev",host="LAPTOP-GV10237H",control=""}
+gateway_slo_p95_ms{tenant="tenant-acme"} 5.0,env="dev",host="LAPTOP-GV10237H",control=""}
+gateway_slo_error_rate{tenant="tenant-acme"} 1.0,env="dev",host="LAPTOP-GV10237H",control=""}
+gateway_slo_p95_ms{tenant="tenant-beta"} 4.8,env="dev",host="LAPTOP-GV10237H",control=""}
+gateway_slo_error_rate{tenant="tenant-beta"} 1.0,env="dev",host="LAPTOP-GV10237H",control=""}
+gateway_burn_rate{window="fast"} 20.0,env="dev",host="LAPTOP-GV10237H",control=""}
+gateway_burn_rate{window="slow"} 20.0,env="dev",host="LAPTOP-GV10237H",control=""}
+gateway_promotion_gate_ok  0{env="dev",host="LAPTOP-GV10237H",control=""}
+gateway_frozen  0{env="dev",host="LAPTOP-GV10237H",control=""}
+gateway_dlq_size_bytes  0{env="dev",host="LAPTOP-GV10237H",control=""}
+gateway_notify_log_size_bytes  0{env="dev",host="LAPTOP-GV10237H",control=""}

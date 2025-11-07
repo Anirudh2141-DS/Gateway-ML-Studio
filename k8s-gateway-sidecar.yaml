@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rag-gateway-sidecar
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rag-gateway-sidecar
+  template:
+    metadata:
+      labels:
+        app: rag-gateway-sidecar
+    spec:
+      containers:
+        - name: sidecar
+          image: python:3.11-slim
+          env:
+            - name: ART_DIR
+              value: "/tmp/art"
+            - name: GATEWAY_BASE
+              value: "http://127.0.0.1:9910"
+            - name: GATEWAY_ADMIN_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: rag-gateway-secrets
+                  key: GATEWAY_ADMIN_TOKEN
+            - name: GW_SIDECAR_INTERVAL
+              value: "5"
+          volumeMounts:
+            - name: artdir
+              mountPath: /tmp/art
+          command: ["python", "/tmp/art/gateway_sidecar_poller.py"]
+      volumes:
+        - name: artdir
+          persistentVolumeClaim:
+            claimName: rag-gateway-art
