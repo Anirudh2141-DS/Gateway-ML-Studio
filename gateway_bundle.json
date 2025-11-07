@@ -1,0 +1,19 @@
+{
+  "ts": 1762114690,
+  "gateway_base": "http://127.0.0.1:9910",
+  "admin_token_present": false,
+  "files": {
+    "ops_md": "\\tmp\\art\\gateway_ops.md",
+    "report_md": "\\tmp\\art\\gateway_report.md",
+    "report_html": "\\tmp\\art\\gateway_report.html",
+    "experiments_md": "\\tmp\\art\\gateway_experiments.md",
+    "experiments_html": "\\tmp\\art\\gateway_experiments.html",
+    "prom_report_md": "\\tmp\\art\\gateway_prom_report.md",
+    "prom_report_html": "\\tmp\\art\\gateway_prom_report.html",
+    "dockerfile": "\\tmp\\art\\Dockerfile.gateway",
+    "compose": "\\tmp\\art\\docker-compose.gateway.yml",
+    "k8s_deploy": "\\tmp\\art\\k8s-gateway-deployment.yaml",
+    "k8s_svc": "\\tmp\\art\\k8s-gateway-service.yaml",
+    "gha": "\\tmp\\art\\gateway-ci.yml"
+  }
+}

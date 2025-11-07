@@ -1,0 +1,7 @@
+{
+  "env": "dev",
+  "base": "http://127.0.0.1:9910",
+  "writable": true,
+  "allow_prod_push": false,
+  "ts": 1761861029
+}

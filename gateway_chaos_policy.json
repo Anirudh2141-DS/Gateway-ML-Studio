@@ -1,0 +1,22 @@
+{
+  "ts": 1761861063,
+  "allowed_flags": [
+    "force_bm25",
+    "disable_ce",
+    "verifier_v2",
+    "dense_weight",
+    "rerank_top_k"
+  ],
+  "blocked_flags": [
+    "disable_payments",
+    "wipe_index",
+    "drop_tenants"
+  ],
+  "max_ttl_s": 1800,
+  "version": 98,
+  "weights": {
+    "A": 0.5,
+    "B": 0.5
+  },
+  "ts_updated": 1762122550
+}

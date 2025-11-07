@@ -1,0 +1,22 @@
+{
+  "ts": 1761843687,
+  "chaos": {
+    "disable_ce": false,
+    "force_bm25": false,
+    "verifier_v2": false
+  },
+  "rl_weights": {
+    "factual": 1.0,
+    "sql": 1.0
+  },
+  "namespaces": [
+    "default",
+    "tenant-acme"
+  ],
+  "_meta": {
+    "source": "notebook/gateway",
+    "schema_version": "1.1.0",
+    "written_at": 1762114717
+  },
+  "ops_profile": "daily"
+}

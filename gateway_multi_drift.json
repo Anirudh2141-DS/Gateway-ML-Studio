@@ -1,0 +1,141 @@
+{
+  "ts": 1761844003,
+  "schema_version": "1.0.0",
+  "desired": {
+    "ts": 1761843687,
+    "chaos": {
+      "disable_ce": false,
+      "force_bm25": false,
+      "verifier_v2": false
+    },
+    "rl_weights": {
+      "factual": 1.0,
+      "sql": 1.0
+    },
+    "namespaces": [
+      "default",
+      "tenant-acme"
+    ]
+  },
+  "gateways": [
+    {
+      "base": "http://127.0.0.1:9910",
+      "ts": 1761844005,
+      "diff": {
+        "chaos_drift": {},
+        "rl_drift": {
+          "factual": {
+            "want": 1.0,
+            "have": 0.35
+          },
+          "math": {
+            "want": null,
+            "have": 1.0
+          },
+          "policy": {
+            "want": null,
+            "have": 1.0
+          }
+        }
+      }
+    },
+    {
+      "base": "http://127.0.0.1:9920",
+      "ts": 1761844009,
+      "diff": {
+        "chaos_drift": {
+          "disable_ce": {
+            "want": false,
+            "have": null
+          },
+          "force_bm25": {
+            "want": false,
+            "have": null
+          },
+          "verifier_v2": {
+            "want": false,
+            "have": null
+          },
+          "ok": {
+            "want": null,
+            "have": false
+          },
+          "error": {
+            "want": null,
+            "have": "HTTPConnectionPool(host='127.0.0.1', port=9920): Max retries exceeded with url: /admin/chaos/get (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000150955BE420>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))"
+          },
+          "_url": {
+            "want": null,
+            "have": "http://127.0.0.1:9920/admin/chaos/get"
+          },
+          "_status": {
+            "want": null,
+            "have": 599
+          }
+        },
+        "rl_drift": {
+          "factual": {
+            "want": 1.0,
+            "have": null
+          },
+          "sql": {
+            "want": 1.0,
+            "have": null
+          }
+        }
+      }
+    },
+    {
+      "base": "http://127.0.0.1:9930",
+      "ts": 1761844013,
+      "diff": {
+        "chaos_drift": {
+          "disable_ce": {
+            "want": false,
+            "have": null
+          },
+          "force_bm25": {
+            "want": false,
+            "have": null
+          },
+          "verifier_v2": {
+            "want": false,
+            "have": null
+          },
+          "ok": {
+            "want": null,
+            "have": false
+          },
+          "error": {
+            "want": null,
+            "have": "HTTPConnectionPool(host='127.0.0.1', port=9930): Max retries exceeded with url: /admin/chaos/get (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000150955BFE00>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))"
+          },
+          "_url": {
+            "want": null,
+            "have": "http://127.0.0.1:9930/admin/chaos/get"
+          },
+          "_status": {
+            "want": null,
+            "have": 599
+          }
+        },
+        "rl_drift": {
+          "factual": {
+            "want": 1.0,
+            "have": null
+          },
+          "sql": {
+            "want": 1.0,
+            "have": null
+          }
+        }
+      }
+    }
+  ],
+  "_meta": {
+    "schema_version": "1.1.0",
+    "written_at": 1762114717,
+    "source": "notebook/gateway"
+  },
+  "ops_profile": "daily"
+}

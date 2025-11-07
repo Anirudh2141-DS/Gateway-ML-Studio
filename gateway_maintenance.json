@@ -1,0 +1,35 @@
+{
+  "_meta": {
+    "schema_version": "1.1.0",
+    "written_at": 1762114733
+  },
+  "dedupe": {
+    "after": 0,
+    "before": 0
+  },
+  "diff": {
+    "base": "http://127.0.0.1:9910",
+    "chaos_drift": {},
+    "control_ts": 1762114717,
+    "rl_drift": {
+      "factual": {
+        "have": 0.35,
+        "want": 1.0
+      },
+      "math": {
+        "have": 1.0,
+        "want": null
+      },
+      "policy": {
+        "have": 1.0,
+        "want": null
+      }
+    },
+    "schema": "1.1.0",
+    "ts": 1762114733
+  },
+  "offline": {
+    "applied": 0
+  },
+  "ts": 1762114733
+}

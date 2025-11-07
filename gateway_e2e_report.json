@@ -1,0 +1,53 @@
+{
+  "ts": 1762114727,
+  "base": "http://127.0.0.1:9910",
+  "up": 200,
+  "metrics": 200,
+  "chaos": 200,
+  "probes": [
+    {
+      "ns": "default",
+      "query": "smoke test",
+      "status": 502,
+      "latency_ms": 4.5,
+      "ok": false
+    },
+    {
+      "ns": "default",
+      "query": "explain RAG fan-out pipeline",
+      "status": 502,
+      "latency_ms": 3.7,
+      "ok": false
+    },
+    {
+      "ns": "tenant-acme",
+      "query": "smoke test",
+      "status": 502,
+      "latency_ms": 7.2,
+      "ok": false
+    },
+    {
+      "ns": "tenant-acme",
+      "query": "explain RAG fan-out pipeline",
+      "status": 502,
+      "latency_ms": 5.0,
+      "ok": false
+    },
+    {
+      "ns": "tenant-beta",
+      "query": "smoke test",
+      "status": 502,
+      "latency_ms": 5.0,
+      "ok": false
+    },
+    {
+      "ns": "tenant-beta",
+      "query": "explain RAG fan-out pipeline",
+      "status": 502,
+      "latency_ms": 4.8,
+      "ok": false
+    }
+  ],
+  "worst_latency_ms": 7.2,
+  "sla_ok": true
+}

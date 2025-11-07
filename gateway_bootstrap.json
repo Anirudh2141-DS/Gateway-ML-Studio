@@ -1,0 +1,9 @@
+{
+  "ts": 1761861133,
+  "profile": "dev",
+  "steps": [
+    "slo:\\tmp\\art\\gateway_slo.json",
+    "helm:\\tmp\\art\\helm-gateway-values.yaml",
+    "prom-rules:exists"
+  ]
+}

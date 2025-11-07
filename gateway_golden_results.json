@@ -1,0 +1,25 @@
+{
+  "ts": 1762117864,
+  "results": [
+    {
+      "query": {
+        "query": "what is the gateway topology?"
+      },
+      "status": 502,
+      "latency_ms": 572.8,
+      "body": {
+        "detail": "retrieval_failed: 'Request' object is not callable"
+      }
+    },
+    {
+      "query": {
+        "query": "show me the latency profile"
+      },
+      "status": 502,
+      "latency_ms": 16.3,
+      "body": {
+        "detail": "retrieval_failed: 'Request' object is not callable"
+      }
+    }
+  ]
+}

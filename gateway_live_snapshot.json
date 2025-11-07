@@ -1,0 +1,15 @@
+{
+  "ts": 1762114733,
+  "base": "http://127.0.0.1:9910",
+  "chaos": {
+    "disable_ce": false,
+    "force_bm25": false,
+    "verifier_v2": false
+  },
+  "rl": {
+    "sql": 1.0,
+    "math": 1.0,
+    "policy": 1.0,
+    "factual": 0.35
+  }
+}

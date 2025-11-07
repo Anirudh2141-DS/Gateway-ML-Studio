@@ -1,0 +1,9 @@
+{
+  "ts": 1762114741,
+  "controller_version": "0.2.0-notebook",
+  "schema": "1.1.0",
+  "min_supported_schema": "1.0.0",
+  "gateway_base": "http://127.0.0.1:9910",
+  "host": "LAPTOP-GV10237H",
+  "git": {}
+}

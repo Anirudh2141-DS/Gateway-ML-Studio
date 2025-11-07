@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile.gateway
+    environment:
+      - RAG_BASE=http://mock-rag:9909
+      - GATEWAY_PORT=9910
+      # - GATEWAY_ADMIN_TOKEN=changeme
+    ports:
+      - "9910:9910"
+    depends_on:
+      - mock-rag
+
+  mock-rag:
+    image: ghcr.io/openai/echo-server:latest
+    ports:
+      - "9909:80"

@@ -1,0 +1,108 @@
+{
+  "ts": 1761846562,
+  "schema": "1.2.0",
+  "chaos": {
+    "disable_ce": false,
+    "force_bm25": false,
+    "verifier_v2": false,
+    "_ttl_s": 1800
+  },
+  "rl_weights": {
+    "factual": 1.0,
+    "sql": 1.0
+  },
+  "tenants": {
+    "default": {
+      "chaos": {
+        "disable_ce": false,
+        "force_bm25": false,
+        "verifier_v2": false
+      },
+      "rl_weights": {
+        "factual": 1.0,
+        "sql": 1.0
+      },
+      "ratelimits": {
+        "qps": 20,
+        "burst": 40
+      }
+    },
+    "tenant-acme": {
+      "chaos": {
+        "disable_ce": true,
+        "force_bm25": false
+      },
+      "rl_weights": {
+        "factual": 0.7,
+        "sql": 1.2
+      },
+      "ratelimits": {
+        "qps": 20,
+        "burst": 40
+      }
+    },
+    "tenant-beta": {
+      "chaos": {
+        "disable_ce": false,
+        "force_bm25": true
+      },
+      "rl_weights": {
+        "factual": 1.0,
+        "sql": 1.0
+      },
+      "ratelimits": {
+        "qps": 20,
+        "burst": 40
+      }
+    }
+  },
+  "namespaces": {
+    "default": {
+      "chaos": {
+        "disable_ce": false,
+        "force_bm25": false,
+        "verifier_v2": false
+      },
+      "rl_weights": {
+        "factual": 1.0,
+        "sql": 1.0
+      },
+      "ratelimits": {
+        "qps": 20,
+        "burst": 40
+      }
+    },
+    "tenant-acme": {
+      "chaos": {
+        "disable_ce": true,
+        "force_bm25": false
+      },
+      "rl_weights": {
+        "factual": 0.7,
+        "sql": 1.2
+      },
+      "ratelimits": {
+        "qps": 20,
+        "burst": 40
+      }
+    },
+    "tenant-beta": {
+      "chaos": {
+        "disable_ce": false,
+        "force_bm25": true
+      },
+      "rl_weights": {
+        "factual": 1.0,
+        "sql": 1.0
+      },
+      "ratelimits": {
+        "qps": 20,
+        "burst": 40
+      }
+    }
+  },
+  "_meta": {
+    "migrated_at": 1761862111,
+    "from_schema": "1.1.0"
+  }
+}

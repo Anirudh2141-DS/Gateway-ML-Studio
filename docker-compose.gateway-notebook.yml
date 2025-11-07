@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  gateway-sidecar:
+    image: python:3.11-slim
+    environment:
+      - ART_DIR=/tmp/art
+      - GATEWAY_BASE=http://127.0.0.1:9910
+      - GATEWAY_ADMIN_TOKEN=
+    volumes:
+      - ./art:/tmp/art
+    command: ["python", "/tmp/art/gateway_sidecar_poller.py"]
+  gateway-admin:
+    image: python:3.11-slim
+    environment:
+      - ART_DIR=/tmp/art
+      - GATEWAY_BASE=http://127.0.0.1:9910
+      - GATEWAY_ADMIN_TOKEN=
+    volumes:
+      - ./art:/tmp/art
+    command: ["python", "/tmp/art/gateway_entrypoint.py", "e2e"]

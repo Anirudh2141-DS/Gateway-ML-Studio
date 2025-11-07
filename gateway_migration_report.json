@@ -1,0 +1,55 @@
+{
+  "ts": 1762114717,
+  "migrated": [
+    {
+      "name": "config",
+      "from": null,
+      "to": "1.1.0"
+    },
+    {
+      "name": "desired",
+      "from": "1.1.0",
+      "to": "1.1.0"
+    },
+    {
+      "name": "rbac",
+      "from": null,
+      "to": "1.1.0"
+    },
+    {
+      "name": "tenants",
+      "from": null,
+      "to": "1.1.0"
+    },
+    {
+      "name": "multi_drift",
+      "from": "1.1.0",
+      "to": "1.1.0"
+    },
+    {
+      "name": "sla",
+      "from": "1.1.0",
+      "to": "1.1.0"
+    },
+    {
+      "name": "agg",
+      "from": null,
+      "to": "1.1.0"
+    },
+    {
+      "name": "prom_ts",
+      "from": "1.1.0",
+      "to": "1.1.0"
+    }
+  ],
+  "skipped": [
+    {
+      "name": "schema_report",
+      "reason": "missing"
+    },
+    {
+      "name": "full_bundle",
+      "reason": "unreadable"
+    }
+  ]
+}

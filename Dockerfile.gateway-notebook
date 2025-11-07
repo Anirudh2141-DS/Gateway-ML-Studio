@@ -1,0 +1,9 @@
+# auto-generated gateway notebook Dockerfile
+FROM python:3.11-slim
+WORKDIR /app
+ENV ART_DIR=/tmp/art \
+    GATEWAY_BASE=http://127.0.0.1:9910
+RUN mkdir -p /tmp/art
+COPY . /app
+# you can add: pip install requests jsonschema ...
+CMD ["python", "-c", "print('run the generated entrypoint from /tmp/art if mounted')"]

@@ -1,0 +1,1226 @@
+{
+  "ts": 1762118093,
+  "host": "LAPTOP-GV10237H",
+  "schema": "1.3.0",
+  "count": 170,
+  "items": [
+    {
+      "path": ".github/workflows/gateway-notebook-ci.yml",
+      "size": 879,
+      "mtime": 1762114718,
+      "age_s": 3375,
+      "ext": ".yml"
+    },
+    {
+      "path": "backups/art-backup-1761861720.tar.gz",
+      "size": 68571,
+      "mtime": 1761861722,
+      "age_s": 256371,
+      "ext": ".gz"
+    },
+    {
+      "path": "backups/art-backup-1762114755.tar.gz",
+      "size": 72676,
+      "mtime": 1762114755,
+      "age_s": 3338,
+      "ext": ".gz"
+    },
+    {
+      "path": "bundle/.github/workflows/ci.yml",
+      "size": 986,
+      "mtime": 1762114589,
+      "age_s": 3504,
+      "ext": ".yml"
+    },
+    {
+      "path": "bundle/dashboards/gateway_rag_overview.json",
+      "size": 1078,
+      "mtime": 1762114589,
+      "age_s": 3504,
+      "ext": ".json"
+    },
+    {
+      "path": "bundle/docker-compose.yml",
+      "size": 630,
+      "mtime": 1762114589,
+      "age_s": 3504,
+      "ext": ".yml"
+    },
+    {
+      "path": "bundle/Dockerfile.gateway",
+      "size": 544,
+      "mtime": 1762114589,
+      "age_s": 3504,
+      "ext": ".gateway"
+    },
+    {
+      "path": "bundle/Dockerfile.microservice",
+      "size": 296,
+      "mtime": 1762114589,
+      "age_s": 3504,
+      "ext": ".microservice"
+    },
+    {
+      "path": "bundle/gateway/Cargo.toml",
+      "size": 549,
+      "mtime": 1762114589,
+      "age_s": 3504,
+      "ext": ".toml"
+    },
+    {
+      "path": "bundle/gateway/src/main.rs",
+      "size": 847,
+      "mtime": 1762114590,
+      "age_s": 3503,
+      "ext": ".rs"
+    },
+    {
+      "path": "bundle/MANIFEST.json",
+      "size": 2744,
+      "mtime": 1762114590,
+      "age_s": 3503,
+      "ext": ".json"
+    },
+    {
+      "path": "bundle/model_cards/BGE_CE.md",
+      "size": 135,
+      "mtime": 1762114589,
+      "age_s": 3504,
+      "ext": ".md"
+    },
+    {
+      "path": "bundle/model_cards/E5_Base.md",
+      "size": 150,
+      "mtime": 1762114589,
+      "age_s": 3504,
+      "ext": ".md"
+    },
+    {
+      "path": "bundle/model_cards/MNLI_RoBERTa.md",
+      "size": 144,
+      "mtime": 1762114589,
+      "age_s": 3504,
+      "ext": ".md"
+    },
+    {
+      "path": "bundle/openapi_microservice.json",
+      "size": 4974,
+      "mtime": 1762114589,
+      "age_s": 3504,
+      "ext": ".json"
+    },
+    {
+      "path": "bundle/overseer.py",
+      "size": 81,
+      "mtime": 1762114589,
+      "age_s": 3504,
+      "ext": ".py"
+    },
+    {
+      "path": "bundle/rag_service.py",
+      "size": 127,
+      "mtime": 1762114589,
+      "age_s": 3504,
+      "ext": ".py"
+    },
+    {
+      "path": "bundle/RUNBOOK.md",
+      "size": 682,
+      "mtime": 1762114589,
+      "age_s": 3504,
+      "ext": ".md"
+    },
+    {
+      "path": "bundle/scripts/loadgen.py",
+      "size": 1905,
+      "mtime": 1762114589,
+      "age_s": 3504,
+      "ext": ".py"
+    },
+    {
+      "path": "bundle/scripts/metrics_check.py",
+      "size": 1205,
+      "mtime": 1762114589,
+      "age_s": 3504,
+      "ext": ".py"
+    },
+    {
+      "path": "control-history/control-1761848359.json",
+      "size": 1056,
+      "mtime": 1761848359,
+      "age_s": 269734,
+      "ext": ".json"
+    },
+    {
+      "path": "control-history/control-1762114724.json",
+      "size": 1056,
+      "mtime": 1762114724,
+      "age_s": 3369,
+      "ext": ".json"
+    },
+    {
+      "path": "deploy/gateway_runbook.md",
+      "size": 522,
+      "mtime": 1762114750,
+      "age_s": 3343,
+      "ext": ".md"
+    },
+    {
+      "path": "deploy/helm-gateway-values.yaml",
+      "size": 375,
+      "mtime": 1762114750,
+      "age_s": 3343,
+      "ext": ".yaml"
+    },
+    {
+      "path": "deploy/k8s-gateway-agent-cronjob.yaml",
+      "size": 2061,
+      "mtime": 1762114750,
+      "age_s": 3343,
+      "ext": ".yaml"
+    },
+    {
+      "path": "deploy/k8s-gateway-sidecar.yaml",
+      "size": 1036,
+      "mtime": 1762114750,
+      "age_s": 3343,
+      "ext": ".yaml"
+    },
+    {
+      "path": "deploy/prometheus-gateway-rules.yml",
+      "size": 1035,
+      "mtime": 1762114750,
+      "age_s": 3343,
+      "ext": ".yml"
+    },
+    {
+      "path": "deploy/README.md",
+      "size": 253,
+      "mtime": 1762114750,
+      "age_s": 3343,
+      "ext": ".md"
+    },
+    {
+      "path": "docker-compose.gateway-notebook.yml",
+      "size": 564,
+      "mtime": 1762114730,
+      "age_s": 3363,
+      "ext": ".yml"
+    },
+    {
+      "path": "docker-compose.gateway.yml",
+      "size": 391,
+      "mtime": 1762114689,
+      "age_s": 3404,
+      "ext": ".yml"
+    },
+    {
+      "path": "Dockerfile.gateway",
+      "size": 412,
+      "mtime": 1762114689,
+      "age_s": 3404,
+      "ext": ".gateway"
+    },
+    {
+      "path": "Dockerfile.gateway-notebook",
+      "size": 323,
+      "mtime": 1762114730,
+      "age_s": 3363,
+      "ext": ".gateway-notebook"
+    },
+    {
+      "path": "fixtures/control.json",
+      "size": 454,
+      "mtime": 1761861451,
+      "age_s": 256642,
+      "ext": ".json"
+    },
+    {
+      "path": "fixtures/prom_ts.json",
+      "size": 126,
+      "mtime": 1761861451,
+      "age_s": 256642,
+      "ext": ".json"
+    },
+    {
+      "path": "fixtures/runs_agg.json",
+      "size": 226,
+      "mtime": 1761861451,
+      "age_s": 256642,
+      "ext": ".json"
+    },
+    {
+      "path": "fixtures/schema_report.json",
+      "size": 22,
+      "mtime": 1761861451,
+      "age_s": 256642,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway-ci.yml",
+      "size": 958,
+      "mtime": 1762114689,
+      "age_s": 3404,
+      "ext": ".yml"
+    },
+    {
+      "path": "gateway-values.yaml",
+      "size": 305,
+      "mtime": 1762114693,
+      "age_s": 3400,
+      "ext": ".yaml"
+    },
+    {
+      "path": "gateway_admin.rs",
+      "size": 3455,
+      "mtime": 1762114721,
+      "age_s": 3372,
+      "ext": ".rs"
+    },
+    {
+      "path": "gateway_admin_allowlist.json",
+      "size": 298,
+      "mtime": 1762115995,
+      "age_s": 2098,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_agent.sh",
+      "size": 487,
+      "mtime": 1762114713,
+      "age_s": 3380,
+      "ext": ".sh"
+    },
+    {
+      "path": "gateway_artifact_index.json",
+      "size": 23111,
+      "mtime": 1762114755,
+      "age_s": 3338,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_bootstrap.json",
+      "size": 181,
+      "mtime": 1761861133,
+      "age_s": 256960,
+      "ext": ".json",
+      "schema": null,
+      "schema_ok": true
+    },
+    {
+      "path": "gateway_bundle.json",
+      "size": 794,
+      "mtime": 1762114690,
+      "age_s": 3403,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_chaos_policy.json",
+      "size": 365,
+      "mtime": 1762117640,
+      "age_s": 453,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_checklist.md",
+      "size": 571,
+      "mtime": 1762114693,
+      "age_s": 3400,
+      "ext": ".md"
+    },
+    {
+      "path": "gateway_ci_check.py",
+      "size": 1755,
+      "mtime": 1762114717,
+      "age_s": 3376,
+      "ext": ".py"
+    },
+    {
+      "path": "gateway_ci_summary.json",
+      "size": 331,
+      "mtime": 1762114612,
+      "age_s": 3481,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_config.json",
+      "size": 4959,
+      "mtime": 1762114717,
+      "age_s": 3376,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_config.rs",
+      "size": 3307,
+      "mtime": 1762114717,
+      "age_s": 3376,
+      "ext": ".rs"
+    },
+    {
+      "path": "gateway_control.blue.json",
+      "size": 2010,
+      "mtime": 1761862111,
+      "age_s": 255982,
+      "ext": ".json",
+      "schema": "gateway_control_plane",
+      "schema_ok": true
+    },
+    {
+      "path": "gateway_control.json",
+      "size": 2010,
+      "mtime": 1762114762,
+      "age_s": 3331,
+      "ext": ".json",
+      "schema": "gateway_control_plane",
+      "schema_ok": true
+    },
+    {
+      "path": "gateway_control_vs_live.json",
+      "size": 349,
+      "mtime": 1762114733,
+      "age_s": 3360,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_controller/__init__.py",
+      "size": 138,
+      "mtime": 1762114741,
+      "age_s": 3352,
+      "ext": ".py"
+    },
+    {
+      "path": "gateway_controller/cli.py",
+      "size": 1104,
+      "mtime": 1762114741,
+      "age_s": 3352,
+      "ext": ".py"
+    },
+    {
+      "path": "gateway_controller_info.json",
+      "size": 213,
+      "mtime": 1762114741,
+      "age_s": 3352,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_controller_metrics.json",
+      "size": 88,
+      "mtime": 1762114736,
+      "age_s": 3357,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_desired_state.json",
+      "size": 388,
+      "mtime": 1762114717,
+      "age_s": 3376,
+      "ext": ".json",
+      "schema": "gateway_desired_state",
+      "schema_ok": true
+    },
+    {
+      "path": "gateway_disk_alert.json",
+      "size": 87,
+      "mtime": 1762114727,
+      "age_s": 3366,
+      "ext": ".json",
+      "schema": null,
+      "schema_ok": true
+    },
+    {
+      "path": "gateway_docs.md",
+      "size": 4408,
+      "mtime": 1762114755,
+      "age_s": 3338,
+      "ext": ".md"
+    },
+    {
+      "path": "gateway_drift_report.json",
+      "size": 262,
+      "mtime": 1762114695,
+      "age_s": 3398,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_e2e_report.json",
+      "size": 1063,
+      "mtime": 1762114727,
+      "age_s": 3366,
+      "ext": ".json",
+      "schema": null,
+      "schema_ok": true
+    },
+    {
+      "path": "gateway_entrypoint.py",
+      "size": 700,
+      "mtime": 1762114726,
+      "age_s": 3367,
+      "ext": ".py"
+    },
+    {
+      "path": "gateway_env.json",
+      "size": 127,
+      "mtime": 1761861029,
+      "age_s": 257064,
+      "ext": ".json",
+      "schema": null,
+      "schema_ok": true
+    },
+    {
+      "path": "gateway_experiments.md",
+      "size": 84,
+      "mtime": 1762114624,
+      "age_s": 3469,
+      "ext": ".md"
+    },
+    {
+      "path": "gateway_full_bundle.tar.gz",
+      "size": 9476,
+      "mtime": 1762114703,
+      "age_s": 3390,
+      "ext": ".gz"
+    },
+    {
+      "path": "gateway_golden_diff.json",
+      "size": 155,
+      "mtime": 1762117864,
+      "age_s": 229,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_golden_queries.json",
+      "size": 115,
+      "mtime": 1762117864,
+      "age_s": 229,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_golden_results.json",
+      "size": 524,
+      "mtime": 1762117864,
+      "age_s": 229,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_grafana_dashboard.json",
+      "size": 1904,
+      "mtime": 1762114706,
+      "age_s": 3387,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_integrity.json",
+      "size": 1392,
+      "mtime": 1762117864,
+      "age_s": 229,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_janitor.json",
+      "size": 81,
+      "mtime": 1762114724,
+      "age_s": 3369,
+      "ext": ".json",
+      "schema": null,
+      "schema_ok": true
+    },
+    {
+      "path": "gateway_keepalive.touch",
+      "size": 10,
+      "mtime": 1762118065,
+      "age_s": 28,
+      "ext": ".touch"
+    },
+    {
+      "path": "gateway_latency_hist.json",
+      "size": 242,
+      "mtime": 1762114677,
+      "age_s": 3416,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_live_snapshot.json",
+      "size": 251,
+      "mtime": 1762114733,
+      "age_s": 3360,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_loader.rs",
+      "size": 849,
+      "mtime": 1762114721,
+      "age_s": 3372,
+      "ext": ".rs"
+    },
+    {
+      "path": "gateway_maintenance.json",
+      "size": 603,
+      "mtime": 1762114733,
+      "age_s": 3360,
+      "ext": ".json",
+      "schema": null,
+      "schema_ok": true
+    },
+    {
+      "path": "gateway_make.md",
+      "size": 324,
+      "mtime": 1762114707,
+      "age_s": 3386,
+      "ext": ".md"
+    },
+    {
+      "path": "gateway_manifest.json",
+      "size": 3403,
+      "mtime": 1762114762,
+      "age_s": 3331,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_migration_report.json",
+      "size": 884,
+      "mtime": 1762114717,
+      "age_s": 3376,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_multi_drift.json",
+      "size": 3645,
+      "mtime": 1762114717,
+      "age_s": 3376,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_offline_changes.jsonl",
+      "size": 0,
+      "mtime": 1762114741,
+      "age_s": 3352,
+      "ext": ".jsonl"
+    },
+    {
+      "path": "gateway_oncall.md",
+      "size": 707,
+      "mtime": 1762114695,
+      "age_s": 3398,
+      "ext": ".md"
+    },
+    {
+      "path": "gateway_oncall_inbox.jsonl",
+      "size": 717,
+      "mtime": 1762117864,
+      "age_s": 229,
+      "ext": ".jsonl"
+    },
+    {
+      "path": "gateway_ops.md",
+      "size": 820,
+      "mtime": 1762114688,
+      "age_s": 3405,
+      "ext": ".md"
+    },
+    {
+      "path": "gateway_ops_docs.md",
+      "size": 378,
+      "mtime": 1762114706,
+      "age_s": 3387,
+      "ext": ".md"
+    },
+    {
+      "path": "gateway_pending_ops.jsonl",
+      "size": 0,
+      "mtime": 1762114733,
+      "age_s": 3360,
+      "ext": ".jsonl"
+    },
+    {
+      "path": "gateway_prom_diff.json",
+      "size": 168,
+      "mtime": 1762114683,
+      "age_s": 3410,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_prom_report.html",
+      "size": 1483,
+      "mtime": 1762114683,
+      "age_s": 3410,
+      "ext": ".html"
+    },
+    {
+      "path": "gateway_prom_report.md",
+      "size": 882,
+      "mtime": 1762114683,
+      "age_s": 3410,
+      "ext": ".md"
+    },
+    {
+      "path": "gateway_prom_runs/metrics_20251030-102849.txt",
+      "size": 3629,
+      "mtime": 1761841729,
+      "age_s": 276364,
+      "ext": ".txt"
+    },
+    {
+      "path": "gateway_prom_runs/metrics_20251102-131803.txt",
+      "size": 3629,
+      "mtime": 1762114683,
+      "age_s": 3410,
+      "ext": ".txt"
+    },
+    {
+      "path": "gateway_prom_timeseries.csv",
+      "size": 369,
+      "mtime": 1762114686,
+      "age_s": 3407,
+      "ext": ".csv"
+    },
+    {
+      "path": "gateway_prom_timeseries.json",
+      "size": 19753,
+      "mtime": 1762114717,
+      "age_s": 3376,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_prometheus.json",
+      "size": 7179,
+      "mtime": 1762114677,
+      "age_s": 3416,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_prometheus.txt",
+      "size": 3629,
+      "mtime": 1761841465,
+      "age_s": 276628,
+      "ext": ".txt"
+    },
+    {
+      "path": "gateway_promotion_gate.json",
+      "size": 707,
+      "mtime": 1762117864,
+      "age_s": 229,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_promotion_policy.json",
+      "size": 215,
+      "mtime": 1762117864,
+      "age_s": 229,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_query_replay.py",
+      "size": 1083,
+      "mtime": 1762114750,
+      "age_s": 3343,
+      "ext": ".py"
+    },
+    {
+      "path": "gateway_quickstart.py",
+      "size": 1270,
+      "mtime": 1762114750,
+      "age_s": 3343,
+      "ext": ".py"
+    },
+    {
+      "path": "gateway_rbac.json",
+      "size": 1294,
+      "mtime": 1762114717,
+      "age_s": 3376,
+      "ext": ".json",
+      "schema": "gateway_rbac",
+      "schema_ok": true
+    },
+    {
+      "path": "gateway_remote_report.json",
+      "size": 433,
+      "mtime": 1762114755,
+      "age_s": 3338,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_report.html",
+      "size": 1313,
+      "mtime": 1762114619,
+      "age_s": 3474,
+      "ext": ".html"
+    },
+    {
+      "path": "gateway_report.md",
+      "size": 373,
+      "mtime": 1761804943,
+      "age_s": 313150,
+      "ext": ".md"
+    },
+    {
+      "path": "gateway_retention.json",
+      "size": 203,
+      "mtime": 1762114702,
+      "age_s": 3391,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_retention_report.json",
+      "size": 42,
+      "mtime": 1762115207,
+      "age_s": 2886,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_route_diag.json",
+      "size": 118,
+      "mtime": 1762114677,
+      "age_s": 3416,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_runbook.md",
+      "size": 778,
+      "mtime": 1762115731,
+      "age_s": 2362,
+      "ext": ".md"
+    },
+    {
+      "path": "gateway_runs/gateway_smoke_20251030-000220.json",
+      "size": 2636,
+      "mtime": 1761804140,
+      "age_s": 313953,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_runs/gateway_smoke_20251030-100608.json",
+      "size": 2785,
+      "mtime": 1761840368,
+      "age_s": 277725,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_runs/gateway_smoke_20251102-131650.json",
+      "size": 2795,
+      "mtime": 1762114611,
+      "age_s": 3482,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_runs_agg.csv",
+      "size": 293,
+      "mtime": 1762114616,
+      "age_s": 3477,
+      "ext": ".csv"
+    },
+    {
+      "path": "gateway_runs_agg.json",
+      "size": 1477,
+      "mtime": 1762114717,
+      "age_s": 3376,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_safety_check.json",
+      "size": 166,
+      "mtime": 1762114724,
+      "age_s": 3369,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_sbom.json",
+      "size": 24515,
+      "mtime": 1762115207,
+      "age_s": 2886,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_sbom.sig",
+      "size": 102,
+      "mtime": 1762115207,
+      "age_s": 2886,
+      "ext": ".sig"
+    },
+    {
+      "path": "gateway_secret_map.json",
+      "size": 247,
+      "mtime": 1762115575,
+      "age_s": 2518,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_secret_version.json",
+      "size": 118,
+      "mtime": 1761861451,
+      "age_s": 256642,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_selfcheck.json",
+      "size": 69,
+      "mtime": 1762114713,
+      "age_s": 3380,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_ship.json",
+      "size": 1502,
+      "mtime": 1762114717,
+      "age_s": 3376,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_sidecar_poller.py",
+      "size": 1645,
+      "mtime": 1762114721,
+      "age_s": 3372,
+      "ext": ".py"
+    },
+    {
+      "path": "gateway_sla_runs.json",
+      "size": 979,
+      "mtime": 1762114717,
+      "age_s": 3376,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_slo.json",
+      "size": 374,
+      "mtime": 1762114736,
+      "age_s": 3357,
+      "ext": ".json",
+      "schema": null,
+      "schema_ok": true
+    },
+    {
+      "path": "gateway_slo_burn.json",
+      "size": 270,
+      "mtime": 1762114750,
+      "age_s": 3343,
+      "ext": ".json",
+      "schema": null,
+      "schema_ok": true
+    },
+    {
+      "path": "gateway_slo_eval.json",
+      "size": 1877,
+      "mtime": 1762114736,
+      "age_s": 3357,
+      "ext": ".json",
+      "schema": null,
+      "schema_ok": true
+    },
+    {
+      "path": "gateway_smoke.json",
+      "size": 2795,
+      "mtime": 1762114609,
+      "age_s": 3484,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_sre_bundle.tar.gz",
+      "size": 4562,
+      "mtime": 1762114730,
+      "age_s": 3363,
+      "ext": ".gz"
+    },
+    {
+      "path": "gateway_sre_kit.tar.gz",
+      "size": 3206,
+      "mtime": 1762114736,
+      "age_s": 3357,
+      "ext": ".gz"
+    },
+    {
+      "path": "gateway_state.html",
+      "size": 2292,
+      "mtime": 1762116147,
+      "age_s": 1946,
+      "ext": ".html"
+    },
+    {
+      "path": "gateway_state.rs",
+      "size": 2750,
+      "mtime": 1762114721,
+      "age_s": 3372,
+      "ext": ".rs"
+    },
+    {
+      "path": "gateway_state_lint.json",
+      "size": 80,
+      "mtime": 1762114755,
+      "age_s": 3338,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_telemetry.json",
+      "size": 739,
+      "mtime": 1762114677,
+      "age_s": 3416,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_tenant_quotas.json",
+      "size": 362,
+      "mtime": 1762114762,
+      "age_s": 3331,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_tenants.json",
+      "size": 1044,
+      "mtime": 1762114717,
+      "age_s": 3376,
+      "ext": ".json",
+      "schema": "gateway_tenants",
+      "schema_ok": true
+    },
+    {
+      "path": "gateway_tests_report.json",
+      "size": 56,
+      "mtime": 1762114741,
+      "age_s": 3352,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_upload_report.json",
+      "size": 645,
+      "mtime": 1762114719,
+      "age_s": 3374,
+      "ext": ".json"
+    },
+    {
+      "path": "gateway_version_matrix.json",
+      "size": 3277,
+      "mtime": 1762115731,
+      "age_s": 2362,
+      "ext": ".json"
+    },
+    {
+      "path": "grafana-gateway-dashboard.json",
+      "size": 1012,
+      "mtime": 1762114762,
+      "age_s": 3331,
+      "ext": ".json"
+    },
+    {
+      "path": "helm-gateway-values.yaml",
+      "size": 375,
+      "mtime": 1762114736,
+      "age_s": 3357,
+      "ext": ".yaml"
+    },
+    {
+      "path": "k6-gateway-smoke.js",
+      "size": 454,
+      "mtime": 1762115207,
+      "age_s": 2886,
+      "ext": ".js"
+    },
+    {
+      "path": "k8s-gateway-agent-cronjob.yaml",
+      "size": 2061,
+      "mtime": 1762114721,
+      "age_s": 3372,
+      "ext": ".yaml"
+    },
+    {
+      "path": "k8s-gateway-configmap.yaml",
+      "size": 11231,
+      "mtime": 1762114713,
+      "age_s": 3380,
+      "ext": ".yaml"
+    },
+    {
+      "path": "k8s-gateway-deployment.yaml",
+      "size": 963,
+      "mtime": 1762114689,
+      "age_s": 3404,
+      "ext": ".yaml"
+    },
+    {
+      "path": "k8s-gateway-secret.yaml",
+      "size": 173,
+      "mtime": 1762114713,
+      "age_s": 3380,
+      "ext": ".yaml"
+    },
+    {
+      "path": "k8s-gateway-service.yaml",
+      "size": 196,
+      "mtime": 1762114689,
+      "age_s": 3404,
+      "ext": ".yaml"
+    },
+    {
+      "path": "k8s-gateway-sidecar.yaml",
+      "size": 1036,
+      "mtime": 1762114724,
+      "age_s": 3369,
+      "ext": ".yaml"
+    },
+    {
+      "path": "mtls/ca.pem",
+      "size": 65,
+      "mtime": 1762116147,
+      "age_s": 1946,
+      "ext": ".pem"
+    },
+    {
+      "path": "mtls/client.pem",
+      "size": 69,
+      "mtime": 1762116147,
+      "age_s": 1946,
+      "ext": ".pem"
+    },
+    {
+      "path": "mtls/mtls_meta.json",
+      "size": 250,
+      "mtime": 1762116147,
+      "age_s": 1946,
+      "ext": ".json"
+    },
+    {
+      "path": "mtls/server.pem",
+      "size": 69,
+      "mtime": 1762116147,
+      "age_s": 1946,
+      "ext": ".pem"
+    },
+    {
+      "path": "n8n-workflow-gateway.json",
+      "size": 2972,
+      "mtime": 1762117864,
+      "age_s": 229,
+      "ext": ".json"
+    },
+    {
+      "path": "n8n_workflows/canary_start_stop.json",
+      "size": 1023,
+      "mtime": 1762114587,
+      "age_s": 3506,
+      "ext": ".json"
+    },
+    {
+      "path": "n8n_workflows/dataset_upload_ingest.json",
+      "size": 848,
+      "mtime": 1762114587,
+      "age_s": 3506,
+      "ext": ".json"
+    },
+    {
+      "path": "n8n_workflows/fixer_loop.json",
+      "size": 726,
+      "mtime": 1762114587,
+      "age_s": 3506,
+      "ext": ".json"
+    },
+    {
+      "path": "n8n_workflows/metrics_gate.json",
+      "size": 1123,
+      "mtime": 1762114587,
+      "age_s": 3506,
+      "ext": ".json"
+    },
+    {
+      "path": "otel_export.json",
+      "size": 85,
+      "mtime": 1762115731,
+      "age_s": 2362,
+      "ext": ".json"
+    },
+    {
+      "path": "PORT.txt",
+      "size": 4,
+      "mtime": 1762114574,
+      "age_s": 3519,
+      "ext": ".txt"
+    },
+    {
+      "path": "prometheus-gateway-rules.yml",
+      "size": 1035,
+      "mtime": 1762114721,
+      "age_s": 3372,
+      "ext": ".yml"
+    },
+    {
+      "path": "release_bundle.zip",
+      "size": 8680,
+      "mtime": 1762114590,
+      "age_s": 3503,
+      "ext": ".zip"
+    },
+    {
+      "path": "reports/rollup_default_20251029.json",
+      "size": 244,
+      "mtime": 1761717900,
+      "age_s": 400193,
+      "ext": ".json"
+    },
+    {
+      "path": "reports/rollup_default_20251030.json",
+      "size": 244,
+      "mtime": 1761804300,
+      "age_s": 313793,
+      "ext": ".json"
+    },
+    {
+      "path": "rust-gateway-config/Cargo.toml",
+      "size": 222,
+      "mtime": 1762114718,
+      "age_s": 3375,
+      "ext": ".toml"
+    },
+    {
+      "path": "rust-gateway-config/src/lib.rs",
+      "size": 4083,
+      "mtime": 1762114718,
+      "age_s": 3375,
+      "ext": ".rs"
+    },
+    {
+      "path": "schemas/gateway_control_plane.schema.json",
+      "size": 1387,
+      "mtime": 1762114718,
+      "age_s": 3375,
+      "ext": ".json"
+    },
+    {
+      "path": "schemas/gateway_desired_state.schema.json",
+      "size": 540,
+      "mtime": 1762114718,
+      "age_s": 3375,
+      "ext": ".json"
+    },
+    {
+      "path": "schemas/gateway_rbac.schema.json",
+      "size": 725,
+      "mtime": 1762114718,
+      "age_s": 3375,
+      "ext": ".json"
+    },
+    {
+      "path": "schemas/gateway_tenants.schema.json",
+      "size": 664,
+      "mtime": 1762114718,
+      "age_s": 3375,
+      "ext": ".json"
+    },
+    {
+      "path": "weights.json",
+      "size": 72,
+      "mtime": 1762114733,
+      "age_s": 3360,
+      "ext": ".json"
+    },
+    {
+      "path": "weights_last_snapshot.json",
+      "size": 151,
+      "mtime": 1762114606,
+      "age_s": 3487,
+      "ext": ".json"
+    },
+    {
+      "path": "weights_versions/history.jsonl",
+      "size": 348,
+      "mtime": 1762114606,
+      "age_s": 3487,
+      "ext": ".jsonl"
+    }
+  ]
+}

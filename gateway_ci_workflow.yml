@@ -1,0 +1,53 @@
+name: gateway-ci
+on:
+  push:
+    paths:
+      - '**.py'
+      - '**.ipynb'
+      - '.github/workflows/**'
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          # add your deps here
+          # pip install -r requirements.txt
+
+      - name: Run CI inside notebook code
+        env:
+          ART_DIR: /tmp/art
+        run: |
+          python - <<'PYCODE'
+import json, os, time, pathlib
+from pathlib import Path
+ART_DIR = Path(os.getenv("ART_DIR", "/tmp/art"))
+ART_DIR.mkdir(parents=True, exist_ok=True)
+# try to call run_full_ci if present
+try:
+    from notebook import run_full_ci  # adapt to your file
+except Exception:
+    run_full_ci = None
+if run_full_ci:
+    rep = run_full_ci()
+    (ART_DIR / "gha_ci_report.json").write_text(json.dumps(rep, indent=2), encoding="utf-8")
+else:
+    (ART_DIR / "gha_ci_report.json").write_text(json.dumps({"ok": False, "error": "run_full_ci not found"}, indent=2), encoding="utf-8")
+PYCODE
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: gateway-art
+          path: /tmp/art/
