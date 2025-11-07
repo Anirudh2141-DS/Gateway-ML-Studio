@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GatewayControlPlane",
+  "type": "object",
+  "required": [
+    "ts",
+    "schema",
+    "chaos",
+    "rl_weights",
+    "tenants"
+  ],
+  "properties": {
+    "ts": {
+      "type": "integer"
+    },
+    "schema": {
+      "type": "string"
+    },
+    "chaos": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "boolean",
+          "number",
+          "string",
+          "null"
+        ]
+      }
+    },
+    "rl_weights": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "tenants": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "chaos": {
+            "type": "object"
+          },
+          "rl_weights": {
+            "type": "object"
+          },
+          "ratelimits": {
+            "type": "object",
+            "properties": {
+              "qps": {
+                "type": "number"
+              },
+              "burst": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "qps",
+              "burst"
+            ]
+          }
+        }
+      }
+    },
+    "_meta": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}
