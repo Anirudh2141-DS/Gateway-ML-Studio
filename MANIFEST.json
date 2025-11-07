@@ -1,0 +1,90 @@
+{
+  "generated_ts": 1762114590,
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "size": 986,
+      "sha256": "3c3166aa5ac63ed58d3ff0ecc4fee71df4439773e2a3480bdbca4003a4c033b4"
+    },
+    {
+      "path": "dashboards/gateway_rag_overview.json",
+      "size": 1078,
+      "sha256": "baeec25e963e019bc77ea68fa2d48e6747ba378c5f22caacf9457e426c65f23b"
+    },
+    {
+      "path": "docker-compose.yml",
+      "size": 630,
+      "sha256": "895af742fa478d064342e4f42db440a2740a2768f8ff4fd7029891d7383d4f05"
+    },
+    {
+      "path": "Dockerfile.gateway",
+      "size": 544,
+      "sha256": "d4bf6ef71a2158be4f5543e7a1fb14c835a1dcf25b0b975b83e4d36964271e45"
+    },
+    {
+      "path": "Dockerfile.microservice",
+      "size": 296,
+      "sha256": "5146a540b1195bd38e5533ebf8798cd5e0066d6bf176539283ea7e9d7a3a003d"
+    },
+    {
+      "path": "gateway/Cargo.toml",
+      "size": 549,
+      "sha256": "558cc3c6166d25961d138733b1c8803b072b4dcbfa92da44bdbfb6be16d54e94"
+    },
+    {
+      "path": "gateway/src/main.rs",
+      "size": 847,
+      "sha256": "faf1d8d7e63e24214a95e3b59ffc1173f73726872bb923bf310261438d7e59db"
+    },
+    {
+      "path": "MANIFEST.json",
+      "size": 2744,
+      "sha256": "414b909457486f93e0227e598881e53329fe17769deb58ae88576dd9dc0af724"
+    },
+    {
+      "path": "model_cards/BGE_CE.md",
+      "size": 135,
+      "sha256": "9ceb080006f48d0c7b127cf9353fd11b9f2f335607a1526466a6293bd7420f96"
+    },
+    {
+      "path": "model_cards/E5_Base.md",
+      "size": 150,
+      "sha256": "47e8a0e94feb480e9c9d02cecf5089c0c1f11a42a60a1804100fb80dc916ff7c"
+    },
+    {
+      "path": "model_cards/MNLI_RoBERTa.md",
+      "size": 144,
+      "sha256": "96a87d4be57447e4d81d6f9b230f95be65ab5cd0b9288da2bf0536d52124e64d"
+    },
+    {
+      "path": "openapi_microservice.json",
+      "size": 4974,
+      "sha256": "843dd2fd5d10d642e83aa469beb99b571ae2455bae17bcc6874aeca6b5c399fd"
+    },
+    {
+      "path": "overseer.py",
+      "size": 81,
+      "sha256": "3da9359a2aef9d62e5d44f42328c01c7227b2fe4799a517afbfc99811bdf1402"
+    },
+    {
+      "path": "rag_service.py",
+      "size": 127,
+      "sha256": "6848723e3bbe46ef608bd808e60584154c7b42b2929f73e9ccb6dbe12132cc16"
+    },
+    {
+      "path": "RUNBOOK.md",
+      "size": 682,
+      "sha256": "66d8f9e93d27b8a4aeac8e07f2742627b680b1f12e4398e6047b43d3e90595db"
+    },
+    {
+      "path": "scripts/loadgen.py",
+      "size": 1905,
+      "sha256": "7323eacd445b0e4477850e477765f441ad82a3ef69bbf3d30605b3e72c95220e"
+    },
+    {
+      "path": "scripts/metrics_check.py",
+      "size": 1205,
+      "sha256": "42c85d4c71a7b69b3f421a829027069186609dccdd795a68778049a2722258ed"
+    }
+  ]
+}

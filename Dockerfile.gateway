@@ -1,16 +1,15 @@
-# --- build ---
-FROM rust:1.80 as builder
-WORKDIR /app
+# Rust Axum gateway with rustls
+FROM rust:1.80 as build
+WORKDIR /src
+# Copy manifest first for caching
+COPY gateway/Cargo.toml gateway/Cargo.lock ./gateway/
+RUN mkdir -p gateway/src && echo 'fn main(){}' > gateway/src/main.rs &&     cd gateway && cargo build --release
+# Now copy real source
 COPY gateway/ ./gateway/
-WORKDIR /app/gateway
-RUN cargo build --release
-
-# --- runtime ---
-FROM gcr.io/distroless/cc as runtime
+RUN cd gateway && cargo build --release
+FROM gcr.io/distroless/cc-debian12
 WORKDIR /app
-COPY --from=builder /app/gateway/target/release/gateway /app/gateway
-ENV GATEWAY_PORT=9910
-ENV RAG_BASE=http://mock-rag:9909
-# ENV GATEWAY_ADMIN_TOKEN=changeme
+COPY --from=build /src/gateway/target/release/gateway /app/gateway
 EXPOSE 9910
+USER 65532:65532
 ENTRYPOINT ["/app/gateway"]

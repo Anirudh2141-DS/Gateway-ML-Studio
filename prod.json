@@ -1,0 +1,19 @@
+{
+  "ts": 1762120324,
+  "name": "prod",
+  "http": {
+    "serve_n8n_v1": true,
+    "serve_n8n_v2": true,
+    "serve_metrics": true,
+    "serve_webhook": false,
+    "serve_admin": false,
+    "n8n_v1_port": 20929,
+    "n8n_v2_port": 20930,
+    "metrics_port": 20940,
+    "webhook_port": 20945
+  },
+  "security": {
+    "require_admin_token": true,
+    "require_mtls": true
+  }
+}

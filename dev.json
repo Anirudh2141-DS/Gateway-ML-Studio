@@ -1,0 +1,19 @@
+{
+  "ts": 1762120324,
+  "name": "dev",
+  "http": {
+    "serve_n8n_v1": true,
+    "serve_n8n_v2": true,
+    "serve_metrics": true,
+    "serve_webhook": true,
+    "serve_admin": false,
+    "n8n_v1_port": 9929,
+    "n8n_v2_port": 9930,
+    "metrics_port": 9940,
+    "webhook_port": 9945
+  },
+  "security": {
+    "require_admin_token": false,
+    "require_mtls": false
+  }
+}

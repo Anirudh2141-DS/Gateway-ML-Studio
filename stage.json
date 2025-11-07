@@ -1,0 +1,19 @@
+{
+  "ts": 1762120324,
+  "name": "stage",
+  "http": {
+    "serve_n8n_v1": true,
+    "serve_n8n_v2": true,
+    "serve_metrics": true,
+    "serve_webhook": true,
+    "serve_admin": false,
+    "n8n_v1_port": 10929,
+    "n8n_v2_port": 10930,
+    "metrics_port": 10940,
+    "webhook_port": 10945
+  },
+  "security": {
+    "require_admin_token": true,
+    "require_mtls": false
+  }
+}

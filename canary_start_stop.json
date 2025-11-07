@@ -1,0 +1,49 @@
+{
+  "name": "Gateway: Canary Start/Stop",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "trigger",
+      "name": "Cron 5m",
+      "type": "n8n-nodes-base.cron"
+    },
+    {
+      "parameters": {
+        "url": "http://127.0.0.1:9910/canary/status",
+        "method": "GET"
+      },
+      "id": "status",
+      "name": "Canary Status",
+      "type": "n8n-nodes-base.httpRequest"
+    },
+    {
+      "parameters": {
+        "url": "http://127.0.0.1:9910/rl/update",
+        "method": "POST",
+        "jsonParameters": true,
+        "options": {},
+        "sendBody": true,
+        "bodyParametersJson": "{\"weights\": {\"factual\": 0.1}}"
+      },
+      "id": "start",
+      "name": "Start Canary",
+      "type": "n8n-nodes-base.httpRequest"
+    }
+  ],
+  "connections": {
+    "Cron 5m": {
+      "main": [
+        [
+          "Canary Status"
+        ]
+      ]
+    },
+    "Canary Status": {
+      "main": [
+        [
+          "Start Canary"
+        ]
+      ]
+    }
+  }
+}

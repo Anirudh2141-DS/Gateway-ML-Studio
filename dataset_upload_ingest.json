@@ -1,0 +1,44 @@
+{
+  "name": "RAG: Dataset Upload \u2192 Ingest",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "trigger",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger"
+    },
+    {
+      "parameters": {
+        "path": "rag/upload"
+      },
+      "id": "webhook",
+      "name": "Upload Webhook",
+      "type": "n8n-nodes-base.webhook"
+    },
+    {
+      "parameters": {
+        "url": "http://127.0.0.1:8001/schema/profile",
+        "method": "POST"
+      },
+      "id": "profile",
+      "name": "Profile",
+      "type": "n8n-nodes-base.httpRequest"
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          "Upload Webhook"
+        ]
+      ]
+    },
+    "Upload Webhook": {
+      "main": [
+        [
+          "Profile"
+        ]
+      ]
+    }
+  }
+}

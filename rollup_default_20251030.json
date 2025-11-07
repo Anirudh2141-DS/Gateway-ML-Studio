@@ -1,0 +1,13 @@
+{
+  "day": "2025-10-30",
+  "ns": "default",
+  "p50_ms": null,
+  "p95_ms": null,
+  "p99_ms": null,
+  "error_rate": null,
+  "faithfulness_mean": null,
+  "ndcg10": null,
+  "cost_per_req": null,
+  "cache_hit_rate": null,
+  "psi": null
+}

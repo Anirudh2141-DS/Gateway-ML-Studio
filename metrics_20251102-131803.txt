@@ -1,0 +1,89 @@
+# HELP gateway_answer_latency_ms Overall latency (ms)
+# TYPE gateway_answer_latency_ms histogram
+gateway_answer_latency_ms_bucket{le="10.0"} 12.0
+gateway_answer_latency_ms_bucket{le="20.0"} 12.0
+gateway_answer_latency_ms_bucket{le="40.0"} 12.0
+gateway_answer_latency_ms_bucket{le="80.0"} 12.0
+gateway_answer_latency_ms_bucket{le="160.0"} 13.0
+gateway_answer_latency_ms_bucket{le="320.0"} 14.0
+gateway_answer_latency_ms_bucket{le="640.0"} 14.0
+gateway_answer_latency_ms_bucket{le="1280.0"} 14.0
+gateway_answer_latency_ms_bucket{le="2560.0"} 14.0
+gateway_answer_latency_ms_bucket{le="+Inf"} 14.0
+gateway_answer_latency_ms_count 14.0
+gateway_answer_latency_ms_sum 293.9013481140137
+# HELP gateway_answer_latency_ms_created Overall latency (ms)
+# TYPE gateway_answer_latency_ms_created gauge
+gateway_answer_latency_ms_created 1.7618403410705435e+09
+# HELP rag_bm25_ms BM25 step (ms)
+# TYPE rag_bm25_ms histogram
+rag_bm25_ms_bucket{le="10.0"} 0.0
+rag_bm25_ms_bucket{le="20.0"} 0.0
+rag_bm25_ms_bucket{le="40.0"} 2.0
+rag_bm25_ms_bucket{le="80.0"} 2.0
+rag_bm25_ms_bucket{le="160.0"} 2.0
+rag_bm25_ms_bucket{le="320.0"} 2.0
+rag_bm25_ms_bucket{le="640.0"} 2.0
+rag_bm25_ms_bucket{le="1280.0"} 2.0
+rag_bm25_ms_bucket{le="+Inf"} 2.0
+rag_bm25_ms_count 2.0
+rag_bm25_ms_sum 62.0
+# HELP rag_bm25_ms_created BM25 step (ms)
+# TYPE rag_bm25_ms_created gauge
+rag_bm25_ms_created 1.7618403410705435e+09
+# HELP rag_dense_ms Dense step (ms)
+# TYPE rag_dense_ms histogram
+rag_dense_ms_bucket{le="10.0"} 0.0
+rag_dense_ms_bucket{le="20.0"} 0.0
+rag_dense_ms_bucket{le="40.0"} 0.0
+rag_dense_ms_bucket{le="80.0"} 2.0
+rag_dense_ms_bucket{le="160.0"} 2.0
+rag_dense_ms_bucket{le="320.0"} 2.0
+rag_dense_ms_bucket{le="640.0"} 2.0
+rag_dense_ms_bucket{le="1280.0"} 2.0
+rag_dense_ms_bucket{le="+Inf"} 2.0
+rag_dense_ms_count 2.0
+rag_dense_ms_sum 126.0
+# HELP rag_dense_ms_created Dense step (ms)
+# TYPE rag_dense_ms_created gauge
+rag_dense_ms_created 1.7618403410705435e+09
+# HELP rag_rerank_ms Rerank step (ms)
+# TYPE rag_rerank_ms histogram
+rag_rerank_ms_bucket{le="10.0"} 0.0
+rag_rerank_ms_bucket{le="20.0"} 0.0
+rag_rerank_ms_bucket{le="40.0"} 1.0
+rag_rerank_ms_bucket{le="80.0"} 1.0
+rag_rerank_ms_bucket{le="160.0"} 1.0
+rag_rerank_ms_bucket{le="320.0"} 1.0
+rag_rerank_ms_bucket{le="640.0"} 1.0
+rag_rerank_ms_bucket{le="1280.0"} 1.0
+rag_rerank_ms_bucket{le="+Inf"} 1.0
+rag_rerank_ms_count 1.0
+rag_rerank_ms_sum 37.0
+# HELP rag_rerank_ms_created Rerank step (ms)
+# TYPE rag_rerank_ms_created gauge
+rag_rerank_ms_created 1.7618403410705435e+09
+# HELP rag_complete_ms Complete step (ms)
+# TYPE rag_complete_ms histogram
+rag_complete_ms_bucket{le="20.0"} 1.0
+rag_complete_ms_bucket{le="40.0"} 1.0
+rag_complete_ms_bucket{le="80.0"} 1.0
+rag_complete_ms_bucket{le="160.0"} 2.0
+rag_complete_ms_bucket{le="320.0"} 2.0
+rag_complete_ms_bucket{le="640.0"} 2.0
+rag_complete_ms_bucket{le="1280.0"} 2.0
+rag_complete_ms_bucket{le="2560.0"} 2.0
+rag_complete_ms_bucket{le="+Inf"} 2.0
+rag_complete_ms_count 2.0
+rag_complete_ms_sum 85.0
+# HELP rag_complete_ms_created Complete step (ms)
+# TYPE rag_complete_ms_created gauge
+rag_complete_ms_created 1.7618403410705435e+09
+# HELP gateway_fanout_errors_total Fanout errors
+# TYPE gateway_fanout_errors_total counter
+gateway_fanout_errors_total{step="rerank"} 1.0
+gateway_fanout_errors_total{step="concurrency"} 12.0
+# HELP gateway_fanout_errors_created Fanout errors
+# TYPE gateway_fanout_errors_created gauge
+gateway_fanout_errors_created{step="rerank"} 1.7618403483220744e+09
+gateway_fanout_errors_created{step="concurrency"} 1.761840359639065e+09

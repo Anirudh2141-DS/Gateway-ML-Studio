@@ -1,0 +1,9 @@
+{
+  "metrics": [
+    {
+      "name": "gateway_answer_latency_ms",
+      "ts": 1761861451,
+      "p95": 1.1
+    }
+  ]
+}

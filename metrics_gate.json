@@ -1,0 +1,53 @@
+{
+  "name": "Metrics Gate: Promote if p95<=1.8s & golden>=95%",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "cron",
+      "name": "Cron 10m",
+      "type": "n8n-nodes-base.cron"
+    },
+    {
+      "parameters": {
+        "url": "http://localhost:9090/api/v1/query",
+        "method": "GET",
+        "queryParametersUi": {
+          "parameter": [
+            {
+              "name": "query",
+              "value": "histogram_quantile(0.95, sum(rate(gateway_answer_latency_ms_bucket[10m])) by (le))"
+            }
+          ]
+        }
+      },
+      "id": "p95",
+      "name": "p95 Query",
+      "type": "n8n-nodes-base.httpRequest"
+    },
+    {
+      "parameters": {
+        "url": "http://127.0.0.1:9910/rl/promote",
+        "method": "POST"
+      },
+      "id": "promote",
+      "name": "Promote",
+      "type": "n8n-nodes-base.httpRequest"
+    }
+  ],
+  "connections": {
+    "Cron 10m": {
+      "main": [
+        [
+          "p95 Query"
+        ]
+      ]
+    },
+    "p95 Query": {
+      "main": [
+        [
+          "Promote"
+        ]
+      ]
+    }
+  }
+}

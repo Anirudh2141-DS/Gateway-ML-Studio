@@ -1,0 +1,29 @@
+{
+  "ts": 1761861451,
+  "schema": "1.1.0",
+  "chaos": {
+    "force_bm25": true
+  },
+  "rl_weights": {
+    "dense": 0.6,
+    "bm25": 0.4
+  },
+  "tenants": {
+    "tenant-acme": {
+      "chaos": {
+        "disable_ce": true
+      },
+      "rl_weights": {
+        "dense": 0.4,
+        "bm25": 0.6
+      },
+      "ratelimits": {
+        "qps": 10,
+        "burst": 20
+      }
+    }
+  },
+  "_meta": {
+    "source": "fixtures"
+  }
+}

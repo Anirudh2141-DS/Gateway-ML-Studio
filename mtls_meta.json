@@ -1,0 +1,8 @@
+{
+  "ts": 1762116147,
+  "schema": "1.3.0",
+  "ca": "/tmp/art/mtls/ca.pem",
+  "server": "/tmp/art/mtls/server.pem",
+  "client": "/tmp/art/mtls/client.pem",
+  "note": "replace with real certs or k8s secrets; notebook only writes placeholders."
+}

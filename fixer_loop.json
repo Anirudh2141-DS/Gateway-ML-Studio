@@ -1,0 +1,32 @@
+{
+  "name": "Fixer Loop: On Error \u2192 Overseer \u2192 Canary",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "cron",
+      "name": "Cron 2m",
+      "type": "n8n-nodes-base.cron"
+    },
+    {
+      "parameters": {
+        "url": "http://127.0.0.1:9912/sandbox/auto",
+        "method": "POST",
+        "jsonParameters": true,
+        "sendBody": true,
+        "bodyParametersJson": "{\"error_bundle\": {\"source\": \"gateway\", \"error\": \"timeout\"}}"
+      },
+      "id": "auto",
+      "name": "Overseer Auto",
+      "type": "n8n-nodes-base.httpRequest"
+    }
+  ],
+  "connections": {
+    "Cron 2m": {
+      "main": [
+        [
+          "Overseer Auto"
+        ]
+      ]
+    }
+  }
+}

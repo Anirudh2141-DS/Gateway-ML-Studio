@@ -1,0 +1,132 @@
+{
+  "ts": 1761840365,
+  "gateway": {
+    "ts": 1761840365,
+    "base": "http://127.0.0.1:9910",
+    "up": {
+      "ok": true,
+      "service": "gateway",
+      "ts": 1761840365
+    },
+    "metrics_status": 200,
+    "chaos": {
+      "ok": true,
+      "chaos": {
+        "disable_ce": false,
+        "force_bm25": false,
+        "verifier_v2": true
+      }
+    },
+    "rl_weights": {
+      "ok": true,
+      "weights": {
+        "sql": 1.0,
+        "math": 1.0,
+        "policy": 1.0,
+        "factual": 0.35
+      }
+    },
+    "strategy_counts": {
+      "ok": true,
+      "counts": {
+        "rerank": 14,
+        "rrf": 63
+      }
+    }
+  },
+  "matrix": {
+    "ts": 1761840365,
+    "scenarios": [
+      {
+        "label": "default",
+        "lat_ms": 7.001638412475586,
+        "pipeline": null,
+        "step_ms": null,
+        "ns": null,
+        "route": null,
+        "partial": null,
+        "raw": {
+          "detail": {
+            "error": "breaker_open",
+            "retry_after": 9
+          }
+        }
+      },
+      {
+        "label": "route=sql",
+        "lat_ms": 7.137775421142578,
+        "pipeline": null,
+        "step_ms": null,
+        "ns": null,
+        "route": null,
+        "partial": null,
+        "raw": {
+          "detail": {
+            "error": "breaker_open",
+            "retry_after": 9
+          }
+        }
+      },
+      {
+        "label": "policy+chaos_disable_ce",
+        "lat_ms": 7.0037841796875,
+        "pipeline": null,
+        "step_ms": null,
+        "ns": null,
+        "route": null,
+        "partial": null,
+        "raw": {
+          "detail": {
+            "error": "breaker_open",
+            "retry_after": 9
+          }
+        }
+      },
+      {
+        "label": "verifier_v2",
+        "lat_ms": 5.997896194458008,
+        "pipeline": null,
+        "step_ms": null,
+        "ns": null,
+        "route": null,
+        "partial": null,
+        "raw": {
+          "detail": {
+            "error": "breaker_open",
+            "retry_after": 9
+          }
+        }
+      },
+      {
+        "label": "ns=tenant-acme",
+        "lat_ms": 7.001399993896484,
+        "pipeline": null,
+        "step_ms": null,
+        "ns": null,
+        "route": null,
+        "partial": null,
+        "raw": {
+          "detail": {
+            "error": "breaker_open",
+            "retry_after": 9
+          }
+        }
+      }
+    ],
+    "strategy_counts_after": {
+      "ok": true,
+      "counts": {
+        "rerank": 15,
+        "rrf": 68
+      }
+    },
+    "chaos_after": {
+      "ok": true,
+      "chaos": {
+        "disable_ce": false,
+        "force_bm25": false,
+        "verifier_v2": false
+      }
+    }
+  }
+}

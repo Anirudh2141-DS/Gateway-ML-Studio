@@ -1,0 +1,117 @@
+{
+  "ts": 1761803983,
+  "gateway": {
+    "ts": 1761803983,
+    "base": "http://127.0.0.1:9910",
+    "up": {
+      "ok": true,
+      "service": "gateway",
+      "ts": 1761803983
+    },
+    "metrics_status": 200,
+    "chaos": {
+      "ok": true,
+      "chaos": {
+        "disable_ce": false,
+        "force_bm25": false,
+        "verifier_v2": true
+      }
+    },
+    "rl_weights": {
+      "ok": true,
+      "weights": {
+        "sql": 1.0,
+        "math": 1.0,
+        "policy": 1.0,
+        "factual": 0.35
+      }
+    },
+    "strategy_counts": {
+      "ok": true,
+      "counts": {
+        "rerank": 13,
+        "rrf": 64
+      }
+    }
+  },
+  "matrix": {
+    "ts": 1761803983,
+    "scenarios": [
+      {
+        "label": "default",
+        "lat_ms": 5.99360466003418,
+        "pipeline": null,
+        "step_ms": null,
+        "ns": null,
+        "route": null,
+        "partial": null,
+        "raw": {
+          "detail": "retrieval_failed: 'Request' object is not callable"
+        }
+      },
+      {
+        "label": "route=sql",
+        "lat_ms": 7.002830505371094,
+        "pipeline": null,
+        "step_ms": null,
+        "ns": null,
+        "route": null,
+        "partial": null,
+        "raw": {
+          "detail": "retrieval_failed: 'Request' object is not callable"
+        }
+      },
+      {
+        "label": "policy+chaos_disable_ce",
+        "lat_ms": 7.005214691162109,
+        "pipeline": null,
+        "step_ms": null,
+        "ns": null,
+        "route": null,
+        "partial": null,
+        "raw": {
+          "detail": "retrieval_failed: 'Request' object is not callable"
+        }
+      },
+      {
+        "label": "verifier_v2",
+        "lat_ms": 5.743503570556641,
+        "pipeline": null,
+        "step_ms": null,
+        "ns": null,
+        "route": null,
+        "partial": null,
+        "raw": {
+          "detail": "retrieval_failed: 'Request' object is not callable"
+        }
+      },
+      {
+        "label": "ns=tenant-acme",
+        "lat_ms": 7.534503936767578,
+        "pipeline": null,
+        "step_ms": null,
+        "ns": null,
+        "route": null,
+        "partial": null,
+        "raw": {
+          "detail": "retrieval_failed: 'Request' object is not callable"
+        }
+      }
+    ],
+    "strategy_counts_after": {
+      "ok": true,
+      "counts": {
+        "rerank": 15,
+        "rrf": 68
+      }
+    },
+    "chaos_after": {
+      "ok": true,
+      "chaos": {
+        "disable_ce": false,
+        "force_bm25": false,
+        "verifier_v2": false
+      }
+    }
+  }
+}
