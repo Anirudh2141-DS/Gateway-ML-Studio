@@ -1,118 +1,182 @@
-"""Represents a wheel file and provides access to the various parts of the
-name that have meaning.
-"""
+import logging
+import os
+import shutil
+from optparse import Values
+from typing import List
 
-import re
-from typing import Dict, Iterable, List
-
-from pip._vendor.packaging.tags import Tag
-from pip._vendor.packaging.utils import (
-    InvalidWheelFilename as PackagingInvalidWheelName,
+from pip._internal.cache import WheelCache
+from pip._internal.cli import cmdoptions
+from pip._internal.cli.req_command import RequirementCommand, with_cleanup
+from pip._internal.cli.status_codes import SUCCESS
+from pip._internal.exceptions import CommandError
+from pip._internal.operations.build.build_tracker import get_build_tracker
+from pip._internal.req.req_install import (
+    InstallRequirement,
+    check_legacy_setup_py_options,
 )
-from pip._vendor.packaging.utils import parse_wheel_filename
+from pip._internal.utils.misc import ensure_dir, normalize_path
+from pip._internal.utils.temp_dir import TempDirectory
+from pip._internal.wheel_builder import build, should_build_for_wheel_command
 
-from pip._internal.exceptions import InvalidWheelFilename
-from pip._internal.utils.deprecation import deprecated
+logger = logging.getLogger(__name__)
 
 
-class Wheel:
-    """A wheel file"""
+class WheelCommand(RequirementCommand):
+    """
+    Build Wheel archives for your requirements and dependencies.
 
-    wheel_file_re = re.compile(
-        r"""^(?P<namever>(?P<name>[^\s-]+?)-(?P<ver>[^\s-]*?))
-        ((-(?P<build>\d[^-]*?))?-(?P<pyver>[^\s-]+?)-(?P<abi>[^\s-]+?)-(?P<plat>[^\s-]+?)
-        \.whl|\.dist-info)$""",
-        re.VERBOSE,
-    )
+    Wheel is a built-package format, and offers the advantage of not
+    recompiling your software during every install. For more details, see the
+    wheel docs: https://wheel.readthedocs.io/en/latest/
 
-    def __init__(self, filename: str) -> None:
-        """
-        :raises InvalidWheelFilename: when the filename is invalid for a wheel
-        """
-        wheel_info = self.wheel_file_re.match(filename)
-        if not wheel_info:
-            raise InvalidWheelFilename(f"{filename} is not a valid wheel filename.")
-        self.filename = filename
-        self.name = wheel_info.group("name").replace("_", "-")
-        _version = wheel_info.group("ver")
-        if "_" in _version:
-            try:
-                parse_wheel_filename(filename)
-            except PackagingInvalidWheelName as e:
-                deprecated(
-                    reason=(
-                        f"Wheel filename {filename!r} is not correctly normalised. "
-                        "Future versions of pip will raise the following error:\n"
-                        f"{e.args[0]}\n\n"
-                    ),
-                    replacement=(
-                        "to rename the wheel to use a correctly normalised "
-                        "name (this may require updating the version in "
-                        "the project metadata)"
-                    ),
-                    gone_in="25.1",
-                    issue=12938,
-                )
+    'pip wheel' uses the build system interface as described here:
+    https://pip.pypa.io/en/stable/reference/build-system/
 
-            _version = _version.replace("_", "-")
+    """
 
-        self.version = _version
-        self.build_tag = wheel_info.group("build")
-        self.pyversions = wheel_info.group("pyver").split(".")
-        self.abis = wheel_info.group("abi").split(".")
-        self.plats = wheel_info.group("plat").split(".")
+    usage = """
+      %prog [options] <requirement specifier> ...
+      %prog [options] -r <requirements file> ...
+      %prog [options] [-e] <vcs project url> ...
+      %prog [options] [-e] <local project path> ...
+      %prog [options] <archive url/path> ..."""
 
-        # All the tag combinations from this file
-        self.file_tags = {
-            Tag(x, y, z) for x in self.pyversions for y in self.abis for z in self.plats
-        }
+    def add_options(self) -> None:
+        self.cmd_opts.add_option(
+            "-w",
+            "--wheel-dir",
+            dest="wheel_dir",
+            metavar="dir",
+            default=os.curdir,
+            help=(
+                "Build wheels into <dir>, where the default is the "
+                "current working directory."
+            ),
+        )
+        self.cmd_opts.add_option(cmdoptions.no_binary())
+        self.cmd_opts.add_option(cmdoptions.only_binary())
+        self.cmd_opts.add_option(cmdoptions.prefer_binary())
+        self.cmd_opts.add_option(cmdoptions.no_build_isolation())
+        self.cmd_opts.add_option(cmdoptions.use_pep517())
+        self.cmd_opts.add_option(cmdoptions.no_use_pep517())
+        self.cmd_opts.add_option(cmdoptions.check_build_deps())
+        self.cmd_opts.add_option(cmdoptions.constraints())
+        self.cmd_opts.add_option(cmdoptions.editable())
+        self.cmd_opts.add_option(cmdoptions.requirements())
+        self.cmd_opts.add_option(cmdoptions.src())
+        self.cmd_opts.add_option(cmdoptions.ignore_requires_python())
+        self.cmd_opts.add_option(cmdoptions.no_deps())
+        self.cmd_opts.add_option(cmdoptions.progress_bar())
 
-    def get_formatted_file_tags(self) -> List[str]:
-        """Return the wheel's tags as a sorted list of strings."""
-        return sorted(str(tag) for tag in self.file_tags)
-
-    def support_index_min(self, tags: List[Tag]) -> int:
-        """Return the lowest index that one of the wheel's file_tag combinations
-        achieves in the given list of supported tags.
-
-        For example, if there are 8 supported tags and one of the file tags
-        is first in the list, then return 0.
-
-        :param tags: the PEP 425 tags to check the wheel against, in order
-            with most preferred first.
-
-        :raises ValueError: If none of the wheel's file tags match one of
-            the supported tags.
-        """
-        try:
-            return next(i for i, t in enumerate(tags) if t in self.file_tags)
-        except StopIteration:
-            raise ValueError()
-
-    def find_most_preferred_tag(
-        self, tags: List[Tag], tag_to_priority: Dict[Tag, int]
-    ) -> int:
-        """Return the priority of the most preferred tag that one of the wheel's file
-        tag combinations achieves in the given list of supported tags using the given
-        tag_to_priority mapping, where lower priorities are more-preferred.
-
-        This is used in place of support_index_min in some cases in order to avoid
-        an expensive linear scan of a large list of tags.
-
-        :param tags: the PEP 425 tags to check the wheel against.
-        :param tag_to_priority: a mapping from tag to priority of that tag, where
-            lower is more preferred.
-
-        :raises ValueError: If none of the wheel's file tags match one of
-            the supported tags.
-        """
-        return min(
-            tag_to_priority[tag] for tag in self.file_tags if tag in tag_to_priority
+        self.cmd_opts.add_option(
+            "--no-verify",
+            dest="no_verify",
+            action="store_true",
+            default=False,
+            help="Don't verify if built wheel is valid.",
         )
 
-    def supported(self, tags: Iterable[Tag]) -> bool:
-        """Return whether the wheel is compatible with one of the given tags.
+        self.cmd_opts.add_option(cmdoptions.config_settings())
+        self.cmd_opts.add_option(cmdoptions.build_options())
+        self.cmd_opts.add_option(cmdoptions.global_options())
 
-        :param tags: the PEP 425 tags to check the wheel against.
-        """
-        return not self.file_tags.isdisjoint(tags)
+        self.cmd_opts.add_option(
+            "--pre",
+            action="store_true",
+            default=False,
+            help=(
+                "Include pre-release and development versions. By default, "
+                "pip only finds stable versions."
+            ),
+        )
+
+        self.cmd_opts.add_option(cmdoptions.require_hashes())
+
+        index_opts = cmdoptions.make_option_group(
+            cmdoptions.index_group,
+            self.parser,
+        )
+
+        self.parser.insert_option_group(0, index_opts)
+        self.parser.insert_option_group(0, self.cmd_opts)
+
+    @with_cleanup
+    def run(self, options: Values, args: List[str]) -> int:
+        session = self.get_default_session(options)
+
+        finder = self._build_package_finder(options, session)
+
+        options.wheel_dir = normalize_path(options.wheel_dir)
+        ensure_dir(options.wheel_dir)
+
+        build_tracker = self.enter_context(get_build_tracker())
+
+        directory = TempDirectory(
+            delete=not options.no_clean,
+            kind="wheel",
+            globally_managed=True,
+        )
+
+        reqs = self.get_requirements(args, options, finder, session)
+        check_legacy_setup_py_options(options, reqs)
+
+        wheel_cache = WheelCache(options.cache_dir)
+
+        preparer = self.make_requirement_preparer(
+            temp_build_dir=directory,
+            options=options,
+            build_tracker=build_tracker,
+            session=session,
+            finder=finder,
+            download_dir=options.wheel_dir,
+            use_user_site=False,
+            verbosity=self.verbosity,
+        )
+
+        resolver = self.make_resolver(
+            preparer=preparer,
+            finder=finder,
+            options=options,
+            wheel_cache=wheel_cache,
+            ignore_requires_python=options.ignore_requires_python,
+            use_pep517=options.use_pep517,
+        )
+
+        self.trace_basic_info(finder)
+
+        requirement_set = resolver.resolve(reqs, check_supported_wheels=True)
+
+        reqs_to_build: List[InstallRequirement] = []
+        for req in requirement_set.requirements.values():
+            if req.is_wheel:
+                preparer.save_linked_requirement(req)
+            elif should_build_for_wheel_command(req):
+                reqs_to_build.append(req)
+
+        preparer.prepare_linked_requirements_more(requirement_set.requirements.values())
+
+        # build wheels
+        build_successes, build_failures = build(
+            reqs_to_build,
+            wheel_cache=wheel_cache,
+            verify=(not options.no_verify),
+            build_options=options.build_options or [],
+            global_options=options.global_options or [],
+        )
+        for req in build_successes:
+            assert req.link and req.link.is_wheel
+            assert req.local_file_path
+            # copy from cache to target directory
+            try:
+                shutil.copy(req.local_file_path, options.wheel_dir)
+            except OSError as e:
+                logger.warning(
+                    "Building wheel for %s failed: %s",
+                    req.name,
+                    e,
+                )
+                build_failures.append(req)
+        if len(build_failures) != 0:
+            raise CommandError("Failed to build one or more wheels")
+
+        return SUCCESS
