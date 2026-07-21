@@ -1785,8 +1785,8 @@ def normalize_name(name):
 # Get the distutils command for interacting with PyPI configurations.
 # :return: the command.
 # """
-# from distutils.core import Distribution
-# from distutils.config import PyPIRCCommand
+# from setuptools._distutils.core import Distribution
+# from setuptools._distutils.config import PyPIRCCommand
 # d = Distribution()
 # return PyPIRCCommand(d)
 
@@ -1960,7 +1960,7 @@ def get_host_platform():
     elif osname[:6] == 'darwin':
         import _osx_support
         try:
-            from distutils import sysconfig
+            from setuptools._distutils import sysconfig
         except ImportError:
             import sysconfig
         osname, release, machine = _osx_support.get_platform_osx(sysconfig.get_config_vars(), osname, release, machine)
